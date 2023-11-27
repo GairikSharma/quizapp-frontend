@@ -1,0 +1,36 @@
+.sidebar {
+    width: 20%;
+    height: calc(100vh - 84px);
+    overflow-y: auto;
+    background-color: rgb(243, 242, 242);
+    padding-top: 25px;
+    padding-left: 25px;
+    transition: 1s;
+}
+.topics-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.topic {
+    font-size: 14px;
+    width: 90%;
+    height: 34px;
+    padding-left: 10px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+}
+.topic:focus-within {
+    color: teal;
+    background-color: white;
+}
+@media only screen and (max-width: 720px) {
+  .sidebar {
+    width: 0px;
+  }
+}

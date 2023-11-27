@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+import { GlobalContext } from "./GlobalContext";
+import Tab from "./components/Tab/Tab";
+import Sidebar from "./components/Sidebar/Sidebar";
+import PracticeQuizContainer from "./components/PracticeQuizContainer/PracticeQuizContainer";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [switchTab, setSwitchTab] = useState("practice");
+  const [allquiz, setAllQuiz] = useState([]);
+  const [openIndex, setOpenIndex] = useState(null);
+  const [correctAnswer, setCorrectAnswer] = useState("");
+
+  const getAllQuiz = async () => {
+    try {
+      const data = await fetch("http://localhost:7000/all-questions");
+      const res = await data.json();
+      if (res) {
+        setAllQuiz(res.allquestions);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getAllQuiz();
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <GlobalContext.Provider
+        value={{
+          allquiz,
+          setAllQuiz,
+          openIndex,
+          setOpenIndex,
+          correctAnswer,
+          setCorrectAnswer,
+        }}
+      >
+        <div className="App">
+          <Tab />
+          <div className="container">
+            <Sidebar />
+            <PracticeQuizContainer />
+          </div>
+        </div>
+      </GlobalContext.Provider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
