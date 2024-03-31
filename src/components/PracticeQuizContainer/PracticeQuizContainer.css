@@ -5,13 +5,13 @@
 .single-qs {
     margin-top: 25px;
     margin-left: 50px;
-    width: 80%;
+    width: 75%;
     min-height: 200px;
     max-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
+    gap: 7px;
 }
 .single-qs p {
     font-size: 22px;
@@ -24,13 +24,4 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
-}
-.single-qs button {
-    width: 120px;
-    height: 44px;
-    border: none;
-    background: rgb(141, 141, 141);
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
 }

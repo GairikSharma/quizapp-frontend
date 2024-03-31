@@ -11,20 +11,24 @@ function App() {
   const [openIndex, setOpenIndex] = useState(null);
   const [correctAnswer, setCorrectAnswer] = useState("");
 
+  //state for getting specific questions from specific topics
+  const [topic, setTopic] = useState("")
+
   const getAllQuiz = async () => {
     try {
-      const data = await fetch("http://localhost:7000/all-questions");
+      const data = await fetch(`https://quizapp-backend-sfcz.vercel.app/all-questions-${topic}`);
       const res = await data.json();
       if (res) {
-        setAllQuiz(res.allquestions);
+        setAllQuiz(res.all_qs);
       }
     } catch (error) {
       console.log(error);
     }
   };
+  console.log(allquiz);
   useEffect(() => {
     getAllQuiz();
-  }, []);
+  }, [topic]);
 
   return (
     <>
@@ -36,11 +40,12 @@ function App() {
           setOpenIndex,
           correctAnswer,
           setCorrectAnswer,
+          setTopic
         }}
       >
         <div className="App">
           <Tab />
-          <div className="container">
+          <div className="flex flex-row">
             <Sidebar />
             <PracticeQuizContainer />
           </div>

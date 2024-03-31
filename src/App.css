@@ -19,3 +19,15 @@ body {
   height: calc(100vh - 84px);
   overflow-y: auto;
 }
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: skyblue;
+  border-radius: 5px;
+}
