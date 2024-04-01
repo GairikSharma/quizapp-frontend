@@ -15,29 +15,37 @@ function PracticeQuizContainer() {
   };
 
   return (
-    <div className="practiceQuizContainer-container">
+    <div className="flex flex-col gap-2 pl-5 mt-3">
+      
       {allquiz.map((i) => {
         return (
           <div className="single-qs" key={i._id}>
-            <p className="text-md">{i.question}</p>
+            <p className="text-lg font-semibold">{i.question}</p>
             {i.options.map((index, x) => {
               return (
-                <div className="options">
-                  {/* <input
-                    type="radio"
-                    onChange={handleCheckAnwer}
-                    value={i.correctOptionIndex}
-                    name={i.correctOptionIndex + 1}
-                  /> */}
-                  <div>{x+1})</div>
+                <div className="options text-sm">
+                  <div>{x + 1})</div>
                   <label>{index}</label>
                 </div>
               );
             })}
             <div>{checkAnswer}</div>
-            <button className="w-[130px] h-[40px] bg-blue-400 rounded-lg text-white" onClick={() => toggleItem(i)}>View Answer</button>
+            <button
+              className="w-[100px] h-[34px] bg-blue-400 rounded-sm text-white text-xs"
+              onClick={() => toggleItem(i)}
+            >
+              View Answer
+            </button>
             {openIndex === i && (
-              <div className="answer text-green-500">Answer: {i.correctOption}</div>
+              <div className="flex flex-col">
+                <div className="flex gap-2 justify-start items-start">
+                  Answer:
+                  <div className="answer text-green-500">
+                    {i.correctOption}
+                  </div>
+                </div>
+                {/* <div>Explaination: </div> */}
+              </div>
             )}
           </div>
         );

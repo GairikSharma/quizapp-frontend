@@ -12,11 +12,15 @@ function App() {
   const [correctAnswer, setCorrectAnswer] = useState("");
 
   //state for getting specific questions from specific topics
-  const [topic, setTopic] = useState("")
+  const [topic, setTopic] = useState("quantitative-aptitude");
+
+  const [showSidebar, setShowSidebar] = useState(false);
 
   const getAllQuiz = async () => {
     try {
-      const data = await fetch(`https://quizapp-backend-sfcz.vercel.app/all-questions-${topic}`);
+      const data = await fetch(
+        `https://quizapp-backend-sfcz.vercel.app/all-questions-${topic}`
+      );
       const res = await data.json();
       if (res) {
         setAllQuiz(res.all_qs);
@@ -40,13 +44,20 @@ function App() {
           setOpenIndex,
           correctAnswer,
           setCorrectAnswer,
-          setTopic
+          setTopic,
+          showSidebar,
+          setShowSidebar,
         }}
       >
-        <div className="App">
-          <Tab />
-          <div className="flex flex-row">
+        <Tab />
+        <div className="App relative flex">
+          {
+            showSidebar && <div className="p-4 h-screen block md:hidden w-full bg-slate-300 sticky top-0 bottom-0"><Sidebar /></div>
+          }
+          <div className="p-4 h-screen hidden md:block md:w-2/12 bg-slate-300 sticky top-0 bottom-0">
             <Sidebar />
+          </div>
+          <div className="w-9/12">
             <PracticeQuizContainer />
           </div>
         </div>

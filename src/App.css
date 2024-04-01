@@ -4,20 +4,9 @@
   box-sizing: border-box;
 }
 body {
-  min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   word-spacing: 2px;
   letter-spacing: 1px;
-}
-.App {
-  display: flex;
-  flex-direction: column;
-}
-.container {
-  display: flex;
-  flex-direction: row;
-  height: calc(100vh - 84px);
-  overflow-y: auto;
 }
 ::-webkit-scrollbar {
   width: 7px;

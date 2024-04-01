@@ -1,20 +1,11 @@
-.practiceQuizContainer-container {
-    width: 100%;
-    overflow-y: scroll;
-}
 .single-qs {
-    margin-top: 25px;
-    margin-left: 50px;
-    width: 75%;
+    width: 100%;
     min-height: 200px;
     max-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 7px;
-}
-.single-qs p {
-    font-size: 22px;
 }
 .single-qs label {
     font-size: 16px;
