@@ -19,7 +19,7 @@ function PracticeQuizContainer() {
       
       {allquiz.map((i) => {
         return (
-          <div className="single-qs" key={i._id}>
+          <div className="single-qs w-11/12" key={i._id}>
             <p className="text-lg font-semibold">{i.question}</p>
             {i.options.map((index, x) => {
               return (
@@ -38,12 +38,10 @@ function PracticeQuizContainer() {
             </button>
             {openIndex === i && (
               <div className="flex flex-col">
-                <div className="flex gap-2 justify-start items-start">
-                  Answer:
+                
                   <div className="answer text-green-500">
-                    {i.correctOption}
+                    <span className="text-[#020617]">Answer:</span> {i.correctOption}
                   </div>
-                </div>
                 {/* <div>Explaination: </div> */}
               </div>
             )}
