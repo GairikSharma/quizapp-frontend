@@ -2,9 +2,17 @@ import React, { useContext, useState } from "react";
 import "./PracticeQuizContainer.css";
 import { GlobalContext } from "../../GlobalContext";
 
+
 function PracticeQuizContainer() {
-  const { allquiz, openIndex, setOpenIndex, correctAnswer, setCorrectAnswer } =
-    useContext(GlobalContext);
+  const {
+    allquiz,
+    openIndex,
+    setOpenIndex,
+    correctAnswer,
+    setCorrectAnswer,
+    loader,
+    setLoader
+  } = useContext(GlobalContext);
   const [checkAnswer, setCheckAnswer] = useState("");
   const [correctOption, setCorrectOption] = useState(null);
   const handleCheckAnwer = (e) => {
@@ -38,11 +46,11 @@ function PracticeQuizContainer() {
             </button>
             {openIndex === i && (
               <div className="flex flex-col">
-                
-                  <div className="answer text-green-500">
-                    <span className="text-[#020617]">Answer:</span> {i.correctOption}
-                  </div>
-                {/* <div>Explaination: </div> */}
+                <div className="answer text-green-500">
+                  <span className="text-[#020617]">Answer:</span>{" "}
+                  {i.correctOption}
+                </div>
+                <div>Explaination: NA</div>
               </div>
             )}
           </div>

@@ -6,6 +6,8 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import PracticeQuizContainer from "./components/PracticeQuizContainer/PracticeQuizContainer";
 import MobileSidebar from "./components/MobileSidebar/MobileSidebar";
 
+import { Audio } from "react-loader-spinner";
+
 function App() {
   const [switchTab, setSwitchTab] = useState("practice");
   const [allquiz, setAllQuiz] = useState([]);
@@ -16,9 +18,13 @@ function App() {
   const [topic, setTopic] = useState("quantitative-aptitude");
 
   const [showSidebar, setShowSidebar] = useState(false);
+  //state for loader
+  const [loader, setLoader] = useState(false);
+  const [showMenu, setShowMenu] = useState(true);
 
   const getAllQuiz = async () => {
     try {
+      setLoader(true);
       const data = await fetch(
         `https://quizapp-backend-sfcz.vercel.app/all-questions-${topic}`
       );
@@ -28,6 +34,8 @@ function App() {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoader(false);
     }
   };
   useEffect(() => {
@@ -36,6 +44,21 @@ function App() {
 
   return (
     <>
+      {loader ? (
+        <div className="absolte w-full h-screen flex flex-row justify-center items-center bg-blend-darken">
+          <Audio
+            height="80"
+            width="80"
+            radius="9"
+            color="#3a79de"
+            ariaLabel="loading"
+            wrapperStyle
+            wrapperClass
+          />
+        </div>
+      ) : (
+        <></>
+      )}
       <GlobalContext.Provider
         value={{
           allquiz,
@@ -47,16 +70,21 @@ function App() {
           setTopic,
           showSidebar,
           setShowSidebar,
+          loader,
+          setLoader,
+          showMenu,
+          setShowMenu,
         }}
       >
         <Tab />
         <div className="App w-full relative flex">
-          {
-            showSidebar && <div className="p-4 h-screen block md:hidden w-10/12 bg-slate-300 sticky top-0 bottom-0"><MobileSidebar /></div>
-          }
-          {
-            
-          }
+          
+          {showSidebar && (
+            <div className="p-4 h-screen block md:hidden w-10/12 bg-blue-200 fixed top-0 bottom-0">
+              <MobileSidebar />
+            </div>
+          )}
+          {}
           <div className="p-4 h-screen hidden md:block md:w-2/12 bg-slate-300 sticky top-0 bottom-0">
             <Sidebar />
           </div>
