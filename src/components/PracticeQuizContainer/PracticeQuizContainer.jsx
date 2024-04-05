@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import "./PracticeQuizContainer.css";
 import { GlobalContext } from "../../GlobalContext";
 
-
 function PracticeQuizContainer() {
   const {
     allquiz,
@@ -11,7 +10,7 @@ function PracticeQuizContainer() {
     correctAnswer,
     setCorrectAnswer,
     loader,
-    setLoader
+    setLoader,
   } = useContext(GlobalContext);
   const [checkAnswer, setCheckAnswer] = useState("");
   const [correctOption, setCorrectOption] = useState(null);
@@ -24,7 +23,6 @@ function PracticeQuizContainer() {
 
   return (
     <div className="flex flex-col gap-2 pl-5 mt-3">
-      
       {allquiz.map((i) => {
         return (
           <div className="single-qs w-11/12" key={i._id}>
@@ -50,7 +48,7 @@ function PracticeQuizContainer() {
                   <span className="text-[#020617]">Answer:</span>{" "}
                   {i.correctOption}
                 </div>
-                <div>Explaination: NA</div>
+                <div>Explaination: {i.explaination ? <div> {i.explaination} </div> : "NA"}</div>
               </div>
             )}
           </div>
