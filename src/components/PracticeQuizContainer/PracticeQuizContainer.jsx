@@ -48,7 +48,7 @@ function PracticeQuizContainer() {
                   <span className="text-[#020617]">Answer:</span>{" "}
                   {i.correctOption}
                 </div>
-                <div>Explaination: {i.explaination ? <div> {i.explaination} </div> : "NA"}</div>
+                <div className="flex justify-start items-center">Explaination: {i.explaination ? <div> {i.explaination} </div> : "NA"}</div>
               </div>
             )}
           </div>
