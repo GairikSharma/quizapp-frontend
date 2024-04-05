@@ -7,6 +7,7 @@ import PracticeQuizContainer from "./components/PracticeQuizContainer/PracticeQu
 import MobileSidebar from "./components/MobileSidebar/MobileSidebar";
 
 import { Audio } from "react-loader-spinner";
+import TestModal from "./components/TestModal/TestModal";
 
 function App() {
   const [switchTab, setSwitchTab] = useState("practice");
@@ -85,13 +86,15 @@ function App() {
             </div>
           )}
           {}
-          <div className="p-4 h-screen hidden md:block md:w-2/12 bg-slate-300 sticky top-0 bottom-0">
+          <div className="p-4 h-screen hidden md:block md:w-2/12 bg-blue-200 sticky top-0 bottom-0">
             <Sidebar />
           </div>
           <div className={showSidebar ? "hidden" : "md:w-10/12"}>
             <PracticeQuizContainer />
           </div>
+          {/* <TestModal />  */}
         </div>
+        
       </GlobalContext.Provider>
     </>
   );

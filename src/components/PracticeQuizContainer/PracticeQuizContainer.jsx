@@ -3,15 +3,7 @@ import "./PracticeQuizContainer.css";
 import { GlobalContext } from "../../GlobalContext";
 
 function PracticeQuizContainer() {
-  const {
-    allquiz,
-    openIndex,
-    setOpenIndex,
-    correctAnswer,
-    setCorrectAnswer,
-    loader,
-    setLoader,
-  } = useContext(GlobalContext);
+  const { allquiz, openIndex, setOpenIndex } = useContext(GlobalContext);
   const [checkAnswer, setCheckAnswer] = useState("");
   const [correctOption, setCorrectOption] = useState(null);
   const handleCheckAnwer = (e) => {
@@ -38,7 +30,7 @@ function PracticeQuizContainer() {
             <div>{checkAnswer}</div>
             <button
               className="w-[100px] h-[34px] bg-blue-400 rounded-sm text-white text-xs"
-              onClick={() => toggleItem(i)}
+              onClick={() => {toggleItem(i) }}
             >
               View Answer
             </button>
@@ -48,7 +40,10 @@ function PracticeQuizContainer() {
                   <span className="text-[#020617]">Answer:</span>{" "}
                   {i.correctOption}
                 </div>
-                <div className="flex justify-start items-center">Explaination: {i.explaination ? <div> {i.explaination} </div> : "NA"}</div>
+                <div className="flex justify-start items-center">
+                  Explaination:{" "}
+                  {i.explaination ? <div> {i.explaination} </div> : "NA"}
+                </div>
               </div>
             )}
           </div>

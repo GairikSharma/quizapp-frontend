@@ -1,19 +1,18 @@
 import React, { useContext } from "react";
-import "./Sidebar.css";
 import { GlobalContext } from "../../GlobalContext";
 
 function Sidebar() {
   const { setTopic, setShowSidebar } = useContext(GlobalContext);
   return (
-    <div className="flex flex-col gap-2 justify-start">
-      <h3 className="topics-heading">Topics</h3>
+    <div className="relative flex flex-col gap-2 justify-start">
+      <h3 className="text-2xl ml-1 font-semibold">Topics</h3>
 
       <button
         onClick={(e) => {
           setTopic("quantitative-aptitude")
           setShowSidebar(false)
         }}
-        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-400 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-100 focus-within:bg-slate-50"
       >
         {" "}
         Quants{" "}
@@ -23,7 +22,7 @@ function Sidebar() {
           setTopic("verbal")
           setShowSidebar(false)
         }}
-        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-400 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-100 focus-within:bg-slate-50"
       >
         {" "}
         Verbal{" "}
@@ -33,7 +32,7 @@ function Sidebar() {
           setTopic("oop")
           setShowSidebar(false)
         }}
-        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-400 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-100 focus-within:bg-slate-50"
       >
         {" "}
         OOP{" "}
@@ -43,7 +42,7 @@ function Sidebar() {
           setTopic("dbms")
           setShowSidebar(false)
         }}
-        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-400 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-100 focus-within:bg-slate-50"
       >
         {" "}
         DBMS{" "}
@@ -53,7 +52,7 @@ function Sidebar() {
           setTopic("dsa")
           setShowSidebar(false)
         }}
-        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-400 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-100 focus-within:bg-slate-50"
       >
         {" "}
         DSA{" "}
@@ -63,11 +62,13 @@ function Sidebar() {
           setTopic("computer-networks")
           setShowSidebar(false)
         }}
-        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-400 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-100 focus-within:bg-slate-50"
       >
         {" "}
         CN{" "}
       </button>
+
+      
     </div>
   );
 }
