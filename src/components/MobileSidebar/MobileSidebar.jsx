@@ -16,7 +16,7 @@ function MobileSidebar() {
           setTopic("quantitative-aptitude");
           setShowSidebar(false);
         }}
-        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-100 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-black focus-within:bg-slate-50"
       >
         {" "}
         Quants{" "}
@@ -26,7 +26,7 @@ function MobileSidebar() {
           setTopic("verbal");
           setShowSidebar(false);
         }}
-        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-100 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-black focus-within:bg-slate-50"
       >
         {" "}
         Verbal{" "}
@@ -36,7 +36,7 @@ function MobileSidebar() {
           setTopic("oop");
           setShowSidebar(false);
         }}
-        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-100 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-black focus-within:bg-slate-50"
       >
         {" "}
         OOP{" "}
@@ -46,7 +46,7 @@ function MobileSidebar() {
           setTopic("dbms");
           setShowSidebar(false);
         }}
-        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-100 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-black focus-within:bg-slate-50"
       >
         {" "}
         DBMS{" "}
@@ -56,7 +56,7 @@ function MobileSidebar() {
           setTopic("dsa");
           setShowSidebar(false);
         }}
-        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-100 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-black focus-within:bg-slate-50"
       >
         {" "}
         DSA{" "}
@@ -66,7 +66,7 @@ function MobileSidebar() {
           setTopic("computer-networks");
           setShowSidebar(false);
         }}
-        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-blue-100 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-black focus-within:bg-slate-50"
       >
         {" "}
         CN{" "}

@@ -23,6 +23,8 @@ function App() {
   const [loader, setLoader] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
 
+  const [showTestTopics, setShowTestTopics] = useState(false);
+
   const getAllQuiz = async () => {
     try {
       setLoader(true);
@@ -75,18 +77,19 @@ function App() {
           setLoader,
           showMenu,
           setShowMenu,
+          showTestTopics,
+          setShowTestTopics,
         }}
       >
         <Tab />
         <div className="App w-full relative flex">
-          
           {showSidebar && (
-            <div className="p-4 h-screen block md:hidden w-10/12 bg-blue-200 fixed top-0 bottom-0">
+            <div className="p-4 h-screen z-10 bg-blue-400 text-white block md:hidden w-10/12 fixed top-0 bottom-0">
               <MobileSidebar />
             </div>
           )}
           {}
-          <div className="p-4 h-screen hidden md:block md:w-2/12 bg-blue-200 sticky top-0 bottom-0">
+          <div className="p-4 h-screen hidden md:block md:w-3/12 border border-y-2 border-t-0 border-b-0 sticky top-0 bottom-0 bg-slate-200">
             <Sidebar />
           </div>
           <div className={showSidebar ? "hidden" : "md:w-10/12"}>
@@ -94,7 +97,6 @@ function App() {
           </div>
           {/* <TestModal />  */}
         </div>
-        
       </GlobalContext.Provider>
     </>
   );

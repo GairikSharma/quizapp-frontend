@@ -18,18 +18,18 @@ function PracticeQuizContainer() {
       {allquiz.map((i) => {
         return (
           <div className="single-qs w-11/12" key={i._id}>
-            <p className="text-lg font-semibold">{i.question}</p>
+            <p className="text-lg font-normal text-gray-500 z-*">{i.question}</p>
             {i.options.map((index, x) => {
               return (
-                <div className="options text-sm">
+                <div className="options text-sm text-gray-500 font-extralight">
                   <div>{x + 1})</div>
-                  <label>{index}</label>
+                  <label className="text-xs">{index}</label>
                 </div>
               );
             })}
             <div>{checkAnswer}</div>
             <button
-              className="w-[100px] h-[34px] bg-blue-400 rounded-sm text-white text-xs"
+              className="w-[100px] h-[34px] bg-blue-400 rounded-lg text-white text-xs"
               onClick={() => {toggleItem(i) }}
             >
               View Answer
@@ -37,11 +37,12 @@ function PracticeQuizContainer() {
             {openIndex === i && (
               <div className="flex flex-col">
                 <div className="answer text-green-500">
-                  <span className="text-[#020617]">Answer:</span>{" "}
-                  {i.correctOption}
+                  <span className="text-gray-500">Answer:</span>{" "}
+                  <span  className="">{i.correctOption}</span>
+                  
                 </div>
-                <div className="flex justify-start items-center">
-                  Explaination:{" "}
+                <div className="flex justify-start items-start text-sm">
+                  <span className="mr-2">Explaination: </span>
                   {i.explaination ? <div> {i.explaination} </div> : "NA"}
                 </div>
               </div>
