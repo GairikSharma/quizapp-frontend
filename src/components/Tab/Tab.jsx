@@ -60,7 +60,7 @@ function Tab() {
           </form>
 
           <button
-            className="relative flex justify-center items-center gap-2 test-btn min-w-[90px] h-[35px] bg-blue-400 rounded-lg mx-4 text-sm text-white"
+            className="hidden relative md:flex justify-center items-center gap-2 test-btn min-w-[90px] h-[35px] bg-blue-400 rounded-lg mx-4 text-sm text-white"
             onClick={freeMock}
           >
             Sign In
@@ -99,6 +99,7 @@ function Tab() {
                     </button>
                   </li>
                   <li className="w-full">
+                    
                     <button className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2">
                       DBMS
                     </button>
