@@ -13,7 +13,7 @@ function MobileSidebar() {
   return (
     <div className="relative w-full h-screen flex flex-col gap-2 justify-start">
       <button
-        className="absolute top-0 right-3 text-2xl"
+        className="absolute top-0 right-0 text-2xl"
         onClick={() => setShowSidebar(false)}
       >
         <IoMdClose />
@@ -34,6 +34,7 @@ function MobileSidebar() {
         </div>
         Quants{" "}
       </button>
+
       <button
         onClick={(e) => {
           setTopic("verbal");
@@ -99,6 +100,12 @@ function MobileSidebar() {
         </div>
         CN{" "}
       </button>
+
+      <div className="w-full flex justify-center items-center">
+        <button className="absolute w-[80%] bottom-12 text-sm h-9 pl-2 rounded-md flex gap-2 justify-center items-center cursor-pointer border-none bg-white text-blue-400 font-semibold hover:bg-slate-50 focus-within:bg-slate-50">
+          Sign In
+        </button>
+      </div>
     </div>
   );
 }
