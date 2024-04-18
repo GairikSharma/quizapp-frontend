@@ -95,11 +95,16 @@ function Tab() {
                   </li>
                   <li className="w-full">
                     <button className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2">
-                      OOP
+                      Verbal
                     </button>
                   </li>
                   <li className="w-full">
                     
+                    <button className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2">
+                      OOP
+                    </button>
+                  </li>
+                  <li className="w-full">
                     <button className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2">
                       DBMS
                     </button>
@@ -111,12 +116,7 @@ function Tab() {
                   </li>
                   <li className="w-full">
                     <button className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2">
-                      DSA
-                    </button>
-                  </li>
-                  <li className="w-full">
-                    <button className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2">
-                      Verbal
+                      CN
                     </button>
                   </li>
                 </ul>
