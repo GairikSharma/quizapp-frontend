@@ -48,12 +48,12 @@ function App() {
   return (
     <>
       {loader ? (
-        <div className="absolte w-full h-screen flex flex-row justify-center items-center bg-blend-darken">
+        <div className="absolte w-full h-screen top-0 bottom-0 right-0 left-0 flex flex-row justify-center items-center bg-blend-darken">
           <Audio
             height="80"
             width="80"
             radius="9"
-            color="#3a79de"
+            color="#60a5fa"
             ariaLabel="loading"
             wrapperStyle
             wrapperClass
