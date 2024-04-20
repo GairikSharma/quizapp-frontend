@@ -7,9 +7,10 @@ body {
   font-family: 'Poppins', sans-serif;
   word-spacing: 2px;
   letter-spacing: 1px;
+  overflow-x: hidden;
 }
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -18,5 +19,6 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: skyblue;
-  border-radius: 5px;
+  border-radius: 3px;
 }
+

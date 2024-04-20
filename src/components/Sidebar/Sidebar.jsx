@@ -12,7 +12,7 @@ function Sidebar() {
   const { setTopic, setShowSidebar } = useContext(GlobalContext);
   return (
     <div className="relative flex flex-col gap-2 justify-start">
-      <h3 className="text-2xl ml-1 font-semibold">Topics</h3>
+      <h3 className="text-2xl ml-1 font-semibold md:hidden">Topics</h3>
 
       <button
         onClick={(e) => {
@@ -80,6 +80,8 @@ function Sidebar() {
         <div className="text-xl text-blue-400"><FaNetworkWired  /></div>
         Computer Networks{" "}
       </button>
+
+      
 
       
     </div>

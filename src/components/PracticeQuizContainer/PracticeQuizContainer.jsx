@@ -19,12 +19,12 @@ function PracticeQuizContainer() {
       {allquiz.map((i) => {
         return (
           <div className="single-qs w-11/12" key={i._id}>
-            <p className="text-lg font-normal text-gray-500 z-*">
+            <p className="text-lg font-normal text-black z-*">
               {i.question}
             </p>
             <p>
               {i.code ? (
-                <div>
+                <div className="w-screen md:w-full">
                   <SyntaxHighlighter language="cpp">
                     {i.code}
                   </SyntaxHighlighter>
@@ -33,6 +33,7 @@ function PracticeQuizContainer() {
                 ""
               )}
             </p>
+            
             {i.options.map((index, x) => {
               return (
                 <div className="options text-sm text-gray-500 font-extralight">
@@ -63,6 +64,7 @@ function PracticeQuizContainer() {
                 </div>
               </div>
             )}
+            <div className="w-full h-3"></div>
           </div>
         );
       })}
