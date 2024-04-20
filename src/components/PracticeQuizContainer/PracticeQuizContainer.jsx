@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./PracticeQuizContainer.css";
 import { GlobalContext } from "../../GlobalContext";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 function PracticeQuizContainer() {
   const { allquiz, openIndex, setOpenIndex } = useContext(GlobalContext);
@@ -18,7 +19,20 @@ function PracticeQuizContainer() {
       {allquiz.map((i) => {
         return (
           <div className="single-qs w-11/12" key={i._id}>
-            <p className="text-lg font-normal text-gray-500 z-*">{i.question}</p>
+            <p className="text-lg font-normal text-gray-500 z-*">
+              {i.question}
+            </p>
+            <p>
+              {i.code ? (
+                <div>
+                  <SyntaxHighlighter language="cpp">
+                    {i.code}
+                  </SyntaxHighlighter>
+                </div>
+              ) : (
+                ""
+              )}
+            </p>
             {i.options.map((index, x) => {
               return (
                 <div className="options text-sm text-gray-500 font-extralight">
@@ -27,10 +41,13 @@ function PracticeQuizContainer() {
                 </div>
               );
             })}
+
             <div>{checkAnswer}</div>
             <button
               className="w-[100px] h-[34px] bg-blue-400 rounded-lg text-white text-xs"
-              onClick={() => {toggleItem(i) }}
+              onClick={() => {
+                toggleItem(i);
+              }}
             >
               View Answer
             </button>
@@ -38,8 +55,7 @@ function PracticeQuizContainer() {
               <div className="flex flex-col">
                 <div className="answer text-green-500">
                   <span className="text-gray-500">Answer:</span>{" "}
-                  <span  className="">{i.correctOption}</span>
-                  
+                  <span className="">{i.correctOption}</span>
                 </div>
                 <div className="flex justify-start items-start text-sm">
                   <span className="mr-2">Explaination: </span>
