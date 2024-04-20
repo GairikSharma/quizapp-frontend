@@ -4,6 +4,7 @@ import { GlobalContext } from "../../GlobalContext";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import { TbBrandSpeedtest } from "react-icons/tb";
+import { IoIosBulb } from "react-icons/io";
 
 function Tab() {
   const handle = useFullScreenHandle();
@@ -22,7 +23,7 @@ function Tab() {
   return (
     <>
       <div className="tab-wrapper w-full h-[64px] flex flex-row justify-between gap-6 items-center border border-y-2">
-        <div className="text-sm md:text-lg ml-4">InsightIQ</div>
+        <div className="text-sm md:text-3xl ml-4 text-blue-400 font-semibold flex justify-start items-center">InsightIQ <span className="text-yellow-500"><IoIosBulb /></span></div>
         <div className="w-9/12  md:w-5/12 flex flex-row justify-end items-center">
           <form class="hidden md:block min-w-[60%] mx-auto">
             <label
