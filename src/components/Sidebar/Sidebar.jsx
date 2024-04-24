@@ -19,10 +19,10 @@ function Sidebar() {
           setTopic("quantitative-aptitude")
           setShowSidebar(false)
         }}
-        className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-[#34495e] text-white focus-within:bg-slate-50 focus-within:text-black"
       >
         {" "}
-        <div className="text-xl text-blue-400"><BiMath /></div>
+        <div className="text-xl text-white"><BiMath /></div>
         Quantitative Aptitude{" "}
       </button>
       <button
@@ -30,10 +30,10 @@ function Sidebar() {
           setTopic("verbal")
           setShowSidebar(false)
         }}
-        className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-[#34495e] text-white focus-within:bg-slate-50 focus-within:text-black"
       >
         {" "}
-        <div className="text-xl text-blue-400"><PiTextAaFill /></div>
+        <div className="text-xl text-white"><PiTextAaFill /></div>
         Verbal Ability{" "}
       </button>
       <button
@@ -41,10 +41,10 @@ function Sidebar() {
           setTopic("oop")
           setShowSidebar(false)
         }}
-        className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-[#34495e] text-white focus-within:bg-slate-50 focus-within:text-black"
       >
         {" "}
-        <div className="text-xl text-blue-400"><MdDataObject /></div>
+        <div className="text-xl text-white"><MdDataObject /></div>
         OOP{" "}
       </button>
       <button
@@ -52,10 +52,10 @@ function Sidebar() {
           setTopic("dbms")
           setShowSidebar(false)
         }}
-        className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-[#34495e] text-white focus-within:bg-slate-50 focus-within:text-black"
       >
         {" "}
-        <div className="text-xl text-blue-400"><FaDatabase /></div>
+        <div className="text-xl text-white"><FaDatabase /></div>
         DBMS{" "}
       </button>
       <button
@@ -63,10 +63,10 @@ function Sidebar() {
           setTopic("dsa")
           setShowSidebar(false)
         }}
-        className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-[#34495e] text-white focus-within:bg-slate-50 focus-within:text-black"
       >
         {" "}
-        <div className="text-xl text-blue-400"><TbBinaryTree /></div>
+        <div className="text-xl text-white"><TbBinaryTree /></div>
         DSA{" "}
       </button>
       <button
@@ -74,10 +74,10 @@ function Sidebar() {
           setTopic("computer-networks")
           setShowSidebar(false)
         }}
-        className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 focus-within:bg-slate-50"
+        className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-[#34495e] text-white focus-within:bg-slate-50 focus-within:text-black"
       >
         {" "}
-        <div className="text-xl text-blue-400"><FaNetworkWired  /></div>
+        <div className="text-xl text-white"><FaNetworkWired  /></div>
         Computer Networks{" "}
       </button>
 

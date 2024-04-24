@@ -49,7 +49,7 @@ const MobileSidebar = () => {
       {/* Conditionally render the sidebar based on showSidebar state */}
       {showSidebar && (
         <motion.div
-          className="p-4 h-screen bg-blue-400 text-white w-full fixed top-0 bottom-0"
+          className="p-4 h-screen bg-[#007acc] text-white w-full fixed top-0 bottom-0"
           variants={sidebarVariants}
           initial="hidden"
           animate="visible"

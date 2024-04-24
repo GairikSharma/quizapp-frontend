@@ -23,7 +23,12 @@ function Tab() {
   return (
     <>
       <div className="tab-wrapper w-full h-[64px] flex flex-row justify-between gap-6 items-center border border-y-2">
-        <div className="text-sm md:text-3xl ml-4 text-blue-400 font-semibold flex justify-start items-center">InsightIQ <span className="text-yellow-500"><IoIosBulb /></span></div>
+        <div className="text-lg md:text-3xl ml-4 text-[#007acc] font-semibold flex justify-start items-center">
+          InsightIQ{" "}
+          <span className="text-[#fec107]">
+            <IoIosBulb />
+          </span>
+        </div>
         <div className="w-9/12  md:w-5/12 flex flex-row justify-end items-center">
           <form class="hidden md:block min-w-[60%] mx-auto">
             <label
@@ -61,15 +66,14 @@ function Tab() {
           </form>
 
           <button
-            className="hidden relative md:flex justify-center items-center gap-2 test-btn min-w-[90px] h-[35px] bg-blue-400 rounded-lg mx-4 text-sm text-white"
+            className="hidden relative md:flex justify-center items-center gap-2 test-btn min-w-[90px] h-[35px] bg-[#007acc] rounded-lg mx-4 text-sm text-white"
             onClick={freeMock}
           >
             Sign In
           </button>
 
-
           <button
-            className="relative flex justify-center items-center gap-2 test-btn min-w-[120px] h-[35px] bg-blue-400 rounded-lg mx-4 text-sm text-white"
+            className="relative flex justify-center items-center gap-2 test-btn min-w-[120px] h-[35px] bg-[#007acc] rounded-lg mx-4 text-sm text-white"
             onClick={freeMock}
           >
             Free Mock
@@ -79,7 +83,7 @@ function Tab() {
           </button>
           {showTestTopics && (
             <div className="fixed w-full h-full top-0 bottom-0 z-50">
-              <div className="fixed top-16 right-4 rounded-lg z-50 bg-blue-400 text-white border border-gray-200 text-sm w-[200px] h-auto flex flex-col justify-center items-start">
+              <div className="fixed top-16 right-4 rounded-lg z-50 bg-[#007acc] text-white border border-gray-200 text-sm w-[200px] h-auto flex flex-col justify-center items-start">
                 <div
                   className="absolute text-xl top-2 right-2 z-50 text-white"
                   onClick={() => {
@@ -88,7 +92,7 @@ function Tab() {
                 >
                   <IoClose />
                 </div>
-                <ul className="relative p-3 w-full flex flex-col justify-center items-start">
+                <ul className="relative p-3 w-full flex flex-col justify-center items-start mt-4">
                   <li className="w-full">
                     <button className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2">
                       Quants
@@ -100,7 +104,6 @@ function Tab() {
                     </button>
                   </li>
                   <li className="w-full">
-                    
                     <button className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2">
                       OOP
                     </button>
@@ -124,7 +127,6 @@ function Tab() {
               </div>
             </div>
           )}
-          
 
           <button
             onClick={() => {
