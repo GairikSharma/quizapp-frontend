@@ -68,7 +68,9 @@ function PracticeQuizContainer() {
         );
       })}
       <div className="h-[80px]"></div>
-      <div className="absolute w-full bottom-2 pl-2 pr-2"><Pagination /></div>
+      {
+        (allquiz.length >= 10) && <div className="absolute w-full bottom-2 pl-2 pr-2"><Pagination /></div>
+      }
     </div>
   );
 }

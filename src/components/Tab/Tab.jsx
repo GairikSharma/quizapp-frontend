@@ -5,8 +5,13 @@ import { CiMenuBurger } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import { TbBrandSpeedtest } from "react-icons/tb";
 import { IoIosBulb } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 function Tab() {
+  const navigate = useNavigate();
+  const startTest = () => {
+    navigate("/instructions");
+  };
   const handle = useFullScreenHandle();
   const [isTest, setIsTest] = useState(false);
   const { setShowSidebar, setShowMenu, setShowTestTopics, showTestTopics } =
@@ -94,32 +99,68 @@ function Tab() {
                 </div>
                 <ul className="relative p-3 w-full flex flex-col justify-center items-start mt-4">
                   <li className="w-full">
-                    <button className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2">
+                    <button
+                      className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2"
+                      onClick={() => {
+                        startTest();
+                        setShowTestTopics(false);
+                      }}
+                    >
                       Quants
                     </button>
                   </li>
                   <li className="w-full">
-                    <button className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2">
+                    <button
+                      className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2"
+                      onClick={() => {
+                        startTest();
+                        setShowTestTopics(false);
+                      }}
+                    >
                       Verbal
                     </button>
                   </li>
                   <li className="w-full">
-                    <button className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2">
+                    <button
+                      className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2"
+                      onClick={() => {
+                        startTest();
+                        setShowTestTopics(false);
+                      }}
+                    >
                       OOP
                     </button>
                   </li>
                   <li className="w-full">
-                    <button className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2">
+                    <button
+                      className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2"
+                      onClick={() => {
+                        startTest();
+                        setShowTestTopics(false);
+                      }}
+                    >
                       DBMS
                     </button>
                   </li>
                   <li className="w-full">
-                    <button className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2">
+                    <button
+                      className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2"
+                      onClick={() => {
+                        startTest();
+                        setShowTestTopics(false);
+                      }}
+                    >
                       DSA
                     </button>
                   </li>
                   <li className="w-full">
-                    <button className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2">
+                    <button
+                      className="w-full h-[34px] hover:bg-slate-50 hover:text-gray-500 text-white rounded-md text-start pl-2"
+                      onClick={() => {
+                        startTest();
+                        setShowTestTopics(false);
+                      }}
+                    >
                       CN
                     </button>
                   </li>

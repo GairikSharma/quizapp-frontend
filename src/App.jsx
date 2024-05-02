@@ -11,6 +11,8 @@ import TestModal from "./components/TestModal/TestModal";
 import { motion } from "framer-motion";
 import { IoIosBulb } from "react-icons/io";
 import Pagination from "./components/Pagination/Pagination";
+import { BrowserRouter, Link } from "react-router-dom";
+import Routing from "./Routing";
 
 function App() {
   const [switchTab, setSwitchTab] = useState("practice");
@@ -48,10 +50,12 @@ function App() {
     getAllQuiz();
   }, [topic]);
 
+  console.log(allquiz.length);
+
   return (
     <>
       {loader ? (
-        <div className="absolte w-full h-screen top-0 bottom-0 right-0 left-0 flex flex-row justify-center items-center bg-blend-darken">
+        <div className="fixed bg-white w-full h-screen top-0 bottom-0 right-0 left-0 flex flex-row justify-center items-center z-50">
           <motion.div
             animate={{ scale: [1, 1.5, 1] }} // Animate the bulb's scale
             transition={{ duration: 1, repeat: Infinity }} // Set the duration and repeat the animation infinitely
@@ -62,43 +66,40 @@ function App() {
       ) : (
         <></>
       )}
-      <GlobalContext.Provider
-        value={{
-          allquiz,
-          setAllQuiz,
-          openIndex,
-          setOpenIndex,
-          correctAnswer,
-          setCorrectAnswer,
-          setTopic,
-          showSidebar,
-          setShowSidebar,
-          loader,
-          setLoader,
-          showMenu,
-          setShowMenu,
-          showTestTopics,
-          setShowTestTopics,
-        }}
-      >
-        <Tab />
-        <div className="App w-full relative flex">
-          {showSidebar && (
-            // <div className="p-4 h-screen z-10 bg-blue-400 text-white block md:hidden w-10/12 fixed top-0 bottom-0">
-            <MobileSidebar />
-            // </div>
-          )}
-          {}
-          <div className="p-4 h-screen hidden md:block md:w-3/12 border border-y-2 border-t-0 border-b-0 sticky top-0 bottom-0 bg-[#007acc]">
-            <Sidebar />
+      <BrowserRouter>
+        <GlobalContext.Provider
+          value={{
+            allquiz,
+            setAllQuiz,
+            openIndex,
+            setOpenIndex,
+            correctAnswer,
+            setCorrectAnswer,
+            setTopic,
+            showSidebar,
+            setShowSidebar,
+            loader,
+            setLoader,
+            showMenu,
+            setShowMenu,
+            showTestTopics,
+            setShowTestTopics,
+          }}
+        >
+          <Tab />
+
+          <div className="App w-full relative flex">
+            {showSidebar && <MobileSidebar />}
+            <div className="p-4 h-screen hidden md:block md:w-3/12 border border-y-2 border-t-0 border-b-0 sticky top-0 bottom-0 bg-[#007acc]">
+              <Sidebar />
+            </div>
+            <div className={showSidebar ? "hidden" : "md:w-10/12"}>
+              <PracticeQuizContainer />
+            </div>
           </div>
-          <div className={showSidebar ? "hidden" : "md:w-10/12" }>
-            <PracticeQuizContainer />
-            
-          </div>
-          {/* <TestModal />  */}
-        </div>
-      </GlobalContext.Provider>
+          <Routing />
+        </GlobalContext.Provider>
+      </BrowserRouter>
     </>
   );
 }

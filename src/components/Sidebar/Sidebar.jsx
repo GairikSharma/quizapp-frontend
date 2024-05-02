@@ -8,8 +8,10 @@ import { TbBinaryTree } from "react-icons/tb";
 import { FaNetworkWired } from "react-icons/fa";
 
 
+
 function Sidebar() {
   const { setTopic, setShowSidebar } = useContext(GlobalContext);
+  
   return (
     <div className="relative flex flex-col gap-2 justify-start">
       <h3 className="text-2xl ml-1 font-semibold md:hidden">Topics</h3>
@@ -18,6 +20,7 @@ function Sidebar() {
         onClick={(e) => {
           setTopic("quantitative-aptitude")
           setShowSidebar(false)
+          
         }}
         className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-[#34495e] text-white focus-within:bg-slate-50 focus-within:text-black"
       >
