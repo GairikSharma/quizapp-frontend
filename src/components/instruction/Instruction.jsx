@@ -16,8 +16,8 @@ function Instruction() {
 
   return (
     <div>
-      <section className="w-full mx-auto fixed top-0 bottom-0 bg-white">
-        <div className="space-y-6 p-5">
+      <section className="w-full h-screen mx-auto fixed top-0 bottom-0 bg-white">
+        <div className="space-y-6 h-auto p-5">
           <div className="space-y-2">
             <h1 className="text-[#007acc] text-3xl font-bold tracking-tight sm:text-4xl">
               Instructions
