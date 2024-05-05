@@ -87,17 +87,9 @@ function App() {
           }}
         >
           <Tab />
-
           <div className="App w-full relative flex">
-            {showSidebar && <MobileSidebar />}
-            <div className="p-4 h-screen hidden md:block md:w-3/12 border border-y-2 border-t-0 border-b-0 sticky top-0 bottom-0 bg-[#007acc]">
-              <Sidebar />
-            </div>
-            <div className={showSidebar ? "hidden" : "md:w-10/12"}>
-              <PracticeQuizContainer />
-            </div>
+            <Routing />
           </div>
-          <Routing />
         </GlobalContext.Provider>
       </BrowserRouter>
     </>

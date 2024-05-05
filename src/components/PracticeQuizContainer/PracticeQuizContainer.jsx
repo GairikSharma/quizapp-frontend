@@ -16,7 +16,7 @@ function PracticeQuizContainer() {
   };
 
   return (
-    <div className="relative flex flex-col gap-2 h-full">
+    <div className="relative flex flex-col gap-2 h-full bg-white">
       {allquiz.map((i) => {
         return (
           <div className="single-qs w-11/12" key={i._id}>

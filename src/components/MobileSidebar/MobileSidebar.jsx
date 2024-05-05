@@ -49,7 +49,7 @@ const MobileSidebar = () => {
       {/* Conditionally render the sidebar based on showSidebar state */}
       {showSidebar && (
         <motion.div
-          className="p-4 h-screen bg-[#007acc] text-white w-full fixed top-0 bottom-0"
+          className="p-4 h-screen bg-[#007acc] text-white w-full fixed top-0 bottom-0 z-50"
           variants={sidebarVariants}
           initial="hidden"
           animate="visible"
@@ -58,7 +58,7 @@ const MobileSidebar = () => {
           {/* <button onClick={handleClose}>Close</button>{" "} */}
           {/* Button to close the sidebar */}
           {/* Sidebar content */}
-          <div className="relative w-full h-screen flex flex-col gap-2 justify-start">
+          <div className="relative w-full h-screen flex flex-col gap-2 justify-start z-20">
             <button
               className="absolute top-0 right-0 text-2xl"
               onClick={handleClose}
@@ -149,7 +149,7 @@ const MobileSidebar = () => {
             </button>
 
             <div className="w-full flex justify-center items-center">
-              <button className="absolute w-[80%] bottom-16 text-sm h-9 pl-2 rounded-md flex gap-2 justify-center items-center cursor-pointer border-none bg-white text-blue-400 font-semibold hover:bg-slate-50 focus-within:bg-slate-50">
+              <button className="absolute w-[80%] bottom-[120px] text-sm h-9 pl-2 rounded-md flex gap-2 justify-center items-center cursor-pointer border-none bg-white text-blue-400 font-semibold hover:bg-slate-50 focus-within:bg-slate-50">
                 Sign In
               </button>
             </div>

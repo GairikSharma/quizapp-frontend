@@ -16,7 +16,7 @@ function Instruction() {
 
   return (
     <div>
-      <section className="w-full mx-auto absolute top-0 bottom-0 bg-white">
+      <section className="w-full mx-auto fixed top-0 bottom-0 bg-white">
         <div className="space-y-6 p-5">
           <div className="space-y-2">
             <h1 className="text-[#007acc] text-3xl font-bold tracking-tight sm:text-4xl">
@@ -127,8 +127,9 @@ function Instruction() {
               </button>
             </div>
 
-            <div className="w-[120px] h-[34px] bg-[#007acc] text-white rounded-lg flex justify-center items-center">
+            <div>
               <button
+                className="w-[120px] h-[34px] bg-[#007acc] text-white rounded-lg flex justify-center items-center"
                 onClick={() => {
                   goToHomeScreen();
                 }}

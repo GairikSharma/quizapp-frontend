@@ -70,12 +70,12 @@ function Tab() {
             </div>
           </form>
 
-          <button
+          {/* <button
             className="hidden relative md:flex justify-center items-center gap-2 test-btn min-w-[90px] h-[35px] bg-[#007acc] rounded-lg mx-4 text-sm text-white"
             onClick={freeMock}
           >
             Sign In
-          </button>
+          </button> */}
 
           <button
             className="relative flex justify-center items-center gap-2 test-btn min-w-[120px] h-[35px] bg-[#007acc] rounded-lg mx-4 text-sm text-white"
