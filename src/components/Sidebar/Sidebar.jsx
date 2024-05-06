@@ -11,7 +11,7 @@ function Sidebar() {
   const { setTopic, setShowSidebar } = useContext(GlobalContext);
 
   return (
-    <div className="relative flex flex-col gap-2 justify-start">
+    <div className="relative flex flex-col gap-2 justify-start -z-20">
       <h3 className="text-2xl ml-1 font-semibold md:hidden">Topics</h3>
 
       <button

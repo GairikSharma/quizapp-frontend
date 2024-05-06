@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../GlobalContext";
 import { motion } from "framer-motion";
 import { IoIosBulb } from "react-icons/io";
+import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/default-highlight";
 
 function MockTest() {
   const {
@@ -36,7 +37,7 @@ function MockTest() {
     } catch (error) {
       console.log(error);
     } finally {
-        setTestLoader(false)
+      setTestLoader(false);
     }
   };
 
@@ -112,6 +113,18 @@ function MockTest() {
             <div className="p-5 md:w-[74%] h-[100%]" key={question._id}>
               <span className="font-semibold text-xl">Question {nqs}</span>
               <p className="w-full  text-xl font-normal">{question.question}</p>
+
+              <p>
+                {question.code ? (
+                  <div className="w-screen md:w-full pl-2 pr-2">
+                    <SyntaxHighlighter language="cpp">
+                      {question.code}
+                    </SyntaxHighlighter>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </p>
 
               <ul className="w-full p-5 mr-4 mt-4 flex flex-col gap-5">
                 {question.options.map((option, oIndex) => (
