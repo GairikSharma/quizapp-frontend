@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { MdDone } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { GlobalContext } from "../../GlobalContext";
 
 function Instruction() {
+  const { testTopic, setTestTopic } = useContext(GlobalContext);
   const [Ischecked, setIsChecked] = useState(false);
 
   const handleCheck = () => {
@@ -14,10 +16,14 @@ function Instruction() {
     navigate("/");
   };
 
+  const goToMockTest = () => {
+    navigate("/mock-test/test_topic");
+  };
+
   return (
     <div>
-      <section className="w-full h-screen mx-auto fixed top-0 bottom-0 bg-white">
-        <div className="space-y-6 h-auto p-5">
+      <section className="w-full min-h-screen mx-auto fixed top-0 bottom-0 bg-white">
+        <div className="space-y-6 h-full overflow-y-scroll p-5">
           <div className="space-y-2">
             <h1 className="text-[#007acc] text-3xl font-bold tracking-tight sm:text-4xl">
               Instructions
@@ -121,7 +127,9 @@ function Instruction() {
             >
               <button
                 disabled={!Ischecked}
-                onClick={() => console.log("Clicked")}
+                onClick={() => {
+                  goToMockTest()
+                }}
               >
                 Start Test
               </button>

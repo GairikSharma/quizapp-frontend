@@ -3,32 +3,15 @@ import { BrowserRouter, Router, Route, Routes } from "react-router-dom";
 import { GlobalContext } from "./GlobalContext";
 import Instruction from "./components/instruction/Instruction";
 import HomePage from "./components/HomePage/HomePage";
+import MockTest from "./pages/MockTest";
 
 function Routing() {
-  const {
-    allquiz,
-    setAllQuiz,
-    openIndex,
-    setOpenIndex,
-    correctAnswer,
-    setCorrectAnswer,
-    setTopic,
-    showSidebar,
-    setShowSidebar,
-    loader,
-    setLoader,
-    showMenu,
-    setShowMenu,
-    showTestTopics,
-    setShowTestTopics,
-  } = useContext(GlobalContext);
-
   return (
     <>
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/instructions" element={<Instruction />}></Route>
-        <Route path="/instructions/test_topic" element={""}></Route>
+        <Route path="/mock-test/test_topic" element={<MockTest />}></Route>
       </Routes>
     </>
   );

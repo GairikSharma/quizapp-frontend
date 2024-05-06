@@ -30,6 +30,13 @@ function App() {
 
   const [showTestTopics, setShowTestTopics] = useState(false);
 
+  //State for test-topic route
+  const [testTopic, setTestTopic] = useState("");
+
+  //State for timer and calculating the score
+  const [seconds, setSeconds] = useState(10 * 60);
+  const [showScore, setShowScore] = useState(false);
+
   const getAllQuiz = async () => {
     try {
       setLoader(true);
@@ -50,7 +57,7 @@ function App() {
     getAllQuiz();
   }, [topic]);
 
-  console.log(allquiz.length);
+  // console.log(allquiz.length);
 
   return (
     <>
@@ -84,6 +91,12 @@ function App() {
             setShowMenu,
             showTestTopics,
             setShowTestTopics,
+            testTopic,
+            setTestTopic,
+            seconds,
+            setSeconds,
+            showScore,
+            setShowScore,
           }}
         >
           <Tab />

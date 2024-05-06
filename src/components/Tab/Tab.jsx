@@ -14,7 +14,7 @@ function Tab() {
   };
   const handle = useFullScreenHandle();
   const [isTest, setIsTest] = useState(false);
-  const { setShowSidebar, setShowMenu, setShowTestTopics, showTestTopics } =
+  const { setShowSidebar, setShowMenu, setShowTestTopics, showTestTopics, testTopic, setTestTopic } =
     useContext(GlobalContext);
 
   const handleSidebar = () => {
@@ -104,6 +104,7 @@ function Tab() {
                       onClick={() => {
                         startTest();
                         setShowTestTopics(false);
+                        setTestTopic("quantitative-aptitude")
                       }}
                     >
                       Quants
@@ -115,6 +116,7 @@ function Tab() {
                       onClick={() => {
                         startTest();
                         setShowTestTopics(false);
+                        setTestTopic("verbal")
                       }}
                     >
                       Verbal
@@ -126,6 +128,7 @@ function Tab() {
                       onClick={() => {
                         startTest();
                         setShowTestTopics(false);
+                        setTestTopic("oop")
                       }}
                     >
                       OOP
@@ -137,6 +140,7 @@ function Tab() {
                       onClick={() => {
                         startTest();
                         setShowTestTopics(false);
+                        setTestTopic("dbms")
                       }}
                     >
                       DBMS
@@ -148,6 +152,7 @@ function Tab() {
                       onClick={() => {
                         startTest();
                         setShowTestTopics(false);
+                        setTestTopic("dsa")
                       }}
                     >
                       DSA
@@ -159,6 +164,7 @@ function Tab() {
                       onClick={() => {
                         startTest();
                         setShowTestTopics(false);
+                        setTestTopic("computer-networks")
                       }}
                     >
                       CN
