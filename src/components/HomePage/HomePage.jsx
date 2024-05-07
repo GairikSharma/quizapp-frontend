@@ -22,8 +22,6 @@ function HomePage() {
 
   return (
     <>
-     
-
       {showSidebar && <MobileSidebar />}
       <div className="p-4 h-screen hidden md:block md:w-3/12 border border-y-2 border-t-0 border-b-0 sticky top-0 bottom-0 bg-[#007acc]">
         <Sidebar />
@@ -34,9 +32,14 @@ function HomePage() {
         {allquiz.map((i) => {
           return (
             <div className="single-qs w-11/12" key={i._id}>
-              <p className="text-lg font-normal text-black z-* pl-5">
-                {i.question}
-              </p>
+              <div>
+                <p className="text-lg font-normal text-black z-* pl-5">
+                  {i.question}
+                  <span class="ml-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                    Basic
+                  </span>
+                </p>
+              </div>
               <p>
                 {i.code ? (
                   <div className="w-screen md:w-full pl-2 pr-2">

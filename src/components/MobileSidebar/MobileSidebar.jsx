@@ -73,7 +73,7 @@ const MobileSidebar = () => {
                 setTopic("quantitative-aptitude");
                 setShowSidebar(false);
               }}
-              className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-black focus-within:bg-slate-50"
+              className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-300 hover:bg-opacity-30 hover:text-white text-white focus-within:bg-slate-400 focus-within:bg-opacity-30 focus-within:text-white"
             >
               {" "}
               <div className="text-xl text-white">
@@ -87,7 +87,7 @@ const MobileSidebar = () => {
                 setTopic("verbal");
                 setShowSidebar(false);
               }}
-              className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-black focus-within:bg-slate-50"
+              className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-300 hover:bg-opacity-30 hover:text-white text-white focus-within:bg-slate-400 focus-within:bg-opacity-30 focus-within:text-white"
             >
               {" "}
               <div className="text-xl text-white">
@@ -100,7 +100,7 @@ const MobileSidebar = () => {
                 setTopic("oop");
                 setShowSidebar(false);
               }}
-              className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-black focus-within:bg-slate-50"
+              className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-300 hover:bg-opacity-30 hover:text-white text-white focus-within:bg-slate-400 focus-within:bg-opacity-30 focus-within:text-white"
             >
               {" "}
               <div className="text-xl text-white">
@@ -113,7 +113,7 @@ const MobileSidebar = () => {
                 setTopic("dbms");
                 setShowSidebar(false);
               }}
-              className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-black focus-within:bg-slate-50"
+              className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-300 hover:bg-opacity-30 hover:text-white text-white focus-within:bg-slate-400 focus-within:bg-opacity-30 focus-within:text-white"
             >
               {" "}
               <div className="text-xl text-white">
@@ -126,7 +126,7 @@ const MobileSidebar = () => {
                 setTopic("dsa");
                 setShowSidebar(false);
               }}
-              className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-black focus-within:bg-slate-50"
+              className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-300 hover:bg-opacity-30 hover:text-white text-white focus-within:bg-slate-400 focus-within:bg-opacity-30 focus-within:text-white"
             >
               {" "}
               <div className="text-xl text-white">
@@ -139,7 +139,7 @@ const MobileSidebar = () => {
                 setTopic("computer-networks");
                 setShowSidebar(false);
               }}
-              className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-50 hover:text-black focus-within:bg-slate-50"
+              className="text-sm h-9 pl-2 rounded-md flex gap-2 justify-start items-center cursor-pointer border-none hover:bg-slate-300 hover:bg-opacity-30 hover:text-white text-white focus-within:bg-slate-400 focus-within:bg-opacity-30 focus-within:text-white"
             >
               {" "}
               <div className="text-xl text-white">

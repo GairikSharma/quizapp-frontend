@@ -25,6 +25,22 @@ function MockTest() {
   const [pqs, setPQs] = useState(0);
   //State for test page loader
   const [testloader, setTestLoader] = useState(true);
+  // const fetchQuestions = async () => {
+  //   try {
+  //     const data = await fetch(
+  //       `https://quizapp-backend-sfcz.vercel.app/all-questions-${testTopic}`
+  //     );
+  //     const res = await data.json();
+  //     if (res) {
+  //       setQuestions(res.all_qs);
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   } finally {
+  //     setTestLoader(false);
+  //   }
+  // };
+
   const fetchQuestions = async () => {
     try {
       const data = await fetch(
@@ -32,7 +48,15 @@ function MockTest() {
       );
       const res = await data.json();
       if (res) {
-        setQuestions(res.all_qs);
+        // Shuffle the array of questions
+        const shuffledQuestions = res.all_qs.sort(() => Math.random() - 0.5);
+
+        // Get the first 20 questions (or fewer if there are less than 20 questions)
+        const selectedQuestions = shuffledQuestions.slice(
+          0,
+          Math.min(shuffledQuestions.length, 20)
+        );
+        setQuestions(selectedQuestions);
       }
     } catch (error) {
       console.log(error);
@@ -160,11 +184,7 @@ function MockTest() {
               </ul>
               <div className="h-[100px]"></div>
             </div>
-            
           ))}
-
-          
-
 
           <div className="fixed bottom-4 right-0 left-0">
             <div className="fixed bottom-4 left-4">
@@ -190,7 +210,7 @@ function MockTest() {
             </div>
           </div>
 
-          <div className="hidden md:block relative w-[24%] h-full bg-blue-400">
+          <div className="hidden md:block relative w-[24%] h-[90vh] bg-blue-400">
             <div className="question-numbers w-full h-auto flex gap-4 flex-wrap flex-row justify-center p-4">
               {questions.map((item, index) => {
                 return (
