@@ -6,7 +6,8 @@ import { GlobalContext } from "../GlobalContext";
 import { motion } from "framer-motion";
 import { IoIosBulb } from "react-icons/io";
 import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/default-highlight";
-import ScoreComponent from "../components/ScoreComponent/ScoreComponent";
+import Confetti from "react-confetti";
+import useWindowSize from "react-use/lib/useWindowSize";
 
 function MockTest() {
   const {
@@ -18,6 +19,7 @@ function MockTest() {
     loader,
     setLoader,
   } = useContext(GlobalContext);
+  const { width, height } = useWindowSize();
   const [questions, setQuestions] = useState([]);
   const [topic, setTopic] = useState("oop");
   const [submitClicked, setSubmitClicked] = useState(false);
@@ -87,7 +89,7 @@ function MockTest() {
     setShowScorePopUp(true);
   };
 
-  // const [trueCount, setTrueCount] = useState(0);
+  const [trueCount, setTrueCount] = useState(0);
   const [currentOptionStatus, setCurrentOptionStatus] = useState(false);
 
   useEffect(() => {
@@ -258,7 +260,27 @@ function MockTest() {
               </div>
             </div>
           ) : (
-            <ScoreComponent />
+            <div className="w-[80%] h-[25%] md:w-[50%] md:h-[50%] rounded-2xl shadow-xl border-2 bg-white border-gray-100 flex flex-col justify-center items-center">
+              <Confetti width={width} height={height} />
+              {trueCount > 10 ? (
+                <div className="text-green-400 text-lg font-semibold">
+                  Congratulation
+                </div>
+              ) : (
+                <div className="text-orange-400 text-lg font-semibold">
+                  Try To Improve
+                </div>
+              )}
+              <p>Your Score: {trueCount}</p>
+              <div>
+                <button
+                  className="w-[100px] h-[34px] bg-blue-500 rounded-lg mt-2 text-white"
+                  onClick={goBackToHomeScreen}
+                >
+                  Go Back
+                </button>
+              </div>
+            </div>
           )}
         </div>
       ) : (

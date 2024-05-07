@@ -1,20 +1,43 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-// import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
 
 function ScoreComponent() {
-  //   const { width, height } = useWindowSize();
   const navigate = useNavigate();
   const goBackToHomeScreen = () => {
     navigate("/");
     window.location.reload();
   };
   const [trueCount, setTrueCount] = useState(0);
+
+  const handleSubmission = () => {
+    setSubmitClicked(true);
+    setSeconds(0);
+    setTimeout(() => {
+      handleShowScorePopUp();
+      setWaitingForScore(false);
+    }, 3000);
+  };
+
+  const handleShowScorePopUp = () => {
+    setShowScorePopUp(true);
+  };
+
+  // const [trueCount, setTrueCount] = useState(0);
+  const [currentOptionStatus, setCurrentOptionStatus] = useState(false);
+
+  useEffect(() => {
+    if (seconds == 0) {
+      setSubmitClicked(true);
+      setTimeout(() => {
+        handleShowScorePopUp();
+        setWaitingForScore(false);
+      }, 3000);
+    }
+  }, [seconds]);
   return (
     <>
-      {/* {trueCount > 10 && <Confetti />} */}
       <Confetti />
       <div className="w-[80%] h-[25%] md:w-[50%] md:h-[50%] rounded-2xl shadow-xl border-2 bg-white border-gray-100 flex flex-col justify-center items-center">
         {trueCount > 10 ? (
