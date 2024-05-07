@@ -95,7 +95,7 @@ function MockTest() {
       ) : (
         <></>
       )}
-      <div className="fixed top-0 bg-white w-full h-screen flex flex-col">
+      <div className="fixed top-0 bg-white w-full overflow-y-scroll h-screen flex flex-col">
         <div className="tab-section w-full h-[64px] border-b-2 shadow-sm flex justify-around items-center">
           <span className="hidden md:block font-semibold text-md opacity-30">
             Mock Test Powered by InsightIQ
@@ -108,9 +108,9 @@ function MockTest() {
           </div>
         </div>
 
-        <div className="relative flex justify-between h-full">
+        <div className="relative flex justify-between h-auto overflow-y-scroll">
           {questions.slice(pqs, nqs).map((question, qIndex) => (
-            <div className="p-5 md:w-[74%] h-[100%]" key={question._id}>
+            <div className="p-5 md:w-[74%] h-auto" key={question._id}>
               <span className="font-semibold text-xl">Question {nqs}</span>
               <p className="w-full  text-xl font-normal">{question.question}</p>
 
@@ -158,30 +158,37 @@ function MockTest() {
                   </li>
                 ))}
               </ul>
-
-              <div className="absolute bottom-4 left-4">
-                <button
-                  className="w-[120px] h-[34px] rounded-lg text-white text-sm font-medium bg-blue-400"
-                  onClick={() => {
-                    setPQs(Math.min(pqs + 1, questions.length - 1));
-                    setNQs(Math.min(nqs + 1, questions.length));
-                    setCurrentOptionStatus(false);
-                  }}
-                >
-                  Save and Next
-                </button>
-              </div>
-
-              <div className="md:hidden absolute bottom-4 left-40">
-                <button
-                  className="w-[80px] h-[34px] rounded-lg text-white text-sm font-medium bg-blue-400"
-                  onClick={handleSubmission}
-                >
-                  Submit
-                </button>
-              </div>
+              <div className="h-[100px]"></div>
             </div>
+            
           ))}
+
+          
+
+
+          <div className="fixed bottom-4 right-0 left-0">
+            <div className="fixed bottom-4 left-4">
+              <button
+                className="w-[120px] h-[34px] rounded-lg text-white text-sm font-medium bg-blue-400"
+                onClick={() => {
+                  setPQs(Math.min(pqs + 1, questions.length - 1));
+                  setNQs(Math.min(nqs + 1, questions.length));
+                  setCurrentOptionStatus(false);
+                }}
+              >
+                Save and Next
+              </button>
+            </div>
+
+            <div className="md:hidden fixed bottom-4 left-40">
+              <button
+                className="w-[80px] h-[34px] rounded-lg text-white text-sm font-medium bg-blue-400"
+                onClick={handleSubmission}
+              >
+                Submit
+              </button>
+            </div>
+          </div>
 
           <div className="hidden md:block relative w-[24%] h-full bg-blue-400">
             <div className="question-numbers w-full h-auto flex gap-4 flex-wrap flex-row justify-center p-4">
