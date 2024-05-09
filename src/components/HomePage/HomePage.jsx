@@ -35,9 +35,23 @@ function HomePage() {
               <div>
                 <p className="text-lg font-normal text-black z-* pl-5">
                   {i.question}
-                  <span class="ml-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
-                    Basic
-                  </span>
+                  {(i.level != "Intermediate" && i.level != "Advanced") && (
+                    <span class="ml-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                      Basic
+                    </span>
+                  )}
+
+                  {i.level === "Intermediate" && (
+                    <span class="ml-2 inline-flex items-center rounded-md bg-yellow-100 px-2 py-1 text-xs font-medium text-yellow-500 ring-1 ring-inset ring-yellow-600/20">
+                      Intermediate
+                    </span>
+                  )}
+
+                  {i.level === "Advanced" && (
+                    <span class="ml-2 inline-flex items-center rounded-md bg-orange-100 px-2 py-1 text-xs font-medium text-orange-500 ring-1 ring-inset ring-orange-600/20">
+                      Advanced
+                    </span>
+                  )}
                 </p>
               </div>
               <p>
