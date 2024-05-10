@@ -8,6 +8,7 @@ import { IoIosBulb } from "react-icons/io";
 import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/default-highlight";
 import Confetti from "react-confetti";
 import useWindowSize from "react-use/lib/useWindowSize";
+import { RxLinkedinLogo } from "react-icons/rx";
 
 function MockTest() {
   const {
@@ -192,7 +193,7 @@ function MockTest() {
           <div className="fixed bottom-4 right-0 left-0">
             <div className="fixed bottom-4 left-4">
               <button
-                className="w-[120px] h-[34px] rounded-lg text-white text-sm font-medium bg-blue-400"
+                className="w-[120px] h-[34px] rounded-lg text-white text-sm font-medium bg-[#007acc]"
                 onClick={() => {
                   setPQs(Math.min(pqs + 1, questions.length - 1));
                   setNQs(Math.min(nqs + 1, questions.length));
@@ -205,7 +206,7 @@ function MockTest() {
 
             <div className="md:hidden fixed bottom-4 left-40">
               <button
-                className="w-[80px] h-[34px] rounded-lg text-white text-sm font-medium bg-blue-400"
+                className="w-[80px] h-[34px] rounded-lg text-white text-sm font-medium bg-[#007acc]"
                 onClick={handleSubmission}
               >
                 Submit
@@ -213,7 +214,7 @@ function MockTest() {
             </div>
           </div>
 
-          <div className="hidden md:block relative w-[24%] h-[90vh] bg-blue-400">
+          <div className="hidden md:block relative w-[24%] h-[90vh] bg-[#007acc]">
             <div className="question-numbers w-full h-auto flex gap-4 flex-wrap flex-row justify-center p-4">
               {questions.map((item, index) => {
                 return (
@@ -234,7 +235,7 @@ function MockTest() {
 
             <div className="absolute bottom-4 left-4">
               <button
-                className="w-[80px] h-[34px] rounded-lg text-blue-400 text-sm font-medium bg-white"
+                className="w-[80px] h-[34px] rounded-lg text-[#007acc] text-sm font-medium bg-white"
                 onClick={handleSubmission}
               >
                 Submit
@@ -260,25 +261,43 @@ function MockTest() {
               </div>
             </div>
           ) : (
-            <div className="w-[80%] h-[25%] md:w-[50%] md:h-[50%] rounded-2xl shadow-xl border-2 bg-white border-gray-100 flex flex-col justify-center items-center">
+            <div className="bg-white gap-4 w-[80%] h-[80%] md:w-[50%] lg:w-[35%] md:h-[50%] rounded-2xl shadow-xl border-2 border-gray-100 flex flex-col justify-center items-center">
               <Confetti width={width} height={height} />
+              <div className="text-3xl md:text-5xl font-bold w-full text-center p-1 text-[#007acc]">Quiz Results</div>
+              <div className="text-lg text-green-400 font-thin word-wrap text-center">Congratulations on completing the quiz!</div>
               {trueCount > 10 ? (
                 <div className="text-green-400 text-lg font-semibold">
-                  Congratulation
+                  Well done!
                 </div>
               ) : (
-                <div className="text-orange-400 text-lg font-semibold">
+                <div className="text-orange-600 text-lg font-semibold animate-pulse">
                   Try To Improve
                 </div>
               )}
-              <p>Your Score: {trueCount}</p>
-              <div>
+              <div className="w-[80%] h-[20%] rounded-xl flex gap-2 justify-center items-center">
+                <p className="text-2xl text-center">Your Score <span className="text-4xl">{trueCount}/20</span></p>
+              </div>
+              <div className="w-full h-auto flex flex-wrap md:flex gap-2 justify-center items-center">
                 <button
-                  className="w-[100px] h-[34px] bg-blue-500 rounded-lg mt-2 text-white"
+                  className="w-[120px] h-[34px] bg-[#007acc] rounded-lg mt-2 text-white"
                   onClick={goBackToHomeScreen}
                 >
                   Go Back
                 </button>
+
+                <button
+                  className="w-[120px] h-[34px] bg-[#007acc] rounded-lg mt-2 text-white"
+                  onClick={goBackToHomeScreen}
+                >
+                  Retake Test
+                </button>
+
+                {/* <button
+                  className="w-[120px] h-[34px] bg-[#007acc] rounded-lg mt-2 text-white flex gap-2 justify-center items-center"
+                  onClick={goBackToHomeScreen}
+                >
+                  Share on <RxLinkedinLogo />
+                </button> */}
               </div>
             </div>
           )}

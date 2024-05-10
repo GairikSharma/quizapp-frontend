@@ -34,7 +34,7 @@ function App() {
   const [testTopic, setTestTopic] = useState("");
 
   //State for timer and calculating the score
-  const [seconds, setSeconds] = useState(10 * 60);
+  const [seconds, setSeconds] = useState(20 * 60);
   const [showScore, setShowScore] = useState(false);
 
   const getAllQuiz = async () => {
