@@ -126,7 +126,7 @@ function HomePage() {
       )}
 
       {showAllQsn && (
-        <div className="w:11/12 md:w-8/12 relative flex flex-col gap-2 h-full">
+        <div className="w-full md:w-8/12 relative flex flex-col gap-2 h-full">
           <div className="h-[20px]"></div>
           {allquiz.map((i) => {
             return (

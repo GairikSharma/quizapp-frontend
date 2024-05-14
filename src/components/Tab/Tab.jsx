@@ -25,7 +25,8 @@ function Tab() {
     showFilter,
     setShowFilter,
 
-    showFilterMobileScreen, setShowFilterMobileScreen
+    showFilterMobileScreen,
+    setShowFilterMobileScreen,
   } = useContext(GlobalContext);
 
   const handleSidebar = () => {
@@ -33,7 +34,7 @@ function Tab() {
   };
 
   const handleFilter = () => {
-    setShowFilterMobileScreen(true)
+    setShowFilterMobileScreen(true);
   };
 
   const freeMock = () => {
@@ -42,51 +43,23 @@ function Tab() {
 
   return (
     <>
-      <div className="tab-wrapper w-full h-[64px] flex flex-row justify-between gap-6 items-center border border-y-2">
+      <div className="sticky md:static top-0 bg-white tab-wrapper w-full h-[64px] flex flex-row justify-between gap-6 items-center border border-x-0 border-y-2 z-10 border-gray-300 shadow-xl">
         <div className="text-lg md:text-3xl ml-4 text-[#007acc] font-semibold flex justify-start items-center">
           InsightIQ{" "}
           <span className="text-[#fec107]">
             <IoIosBulb />
           </span>
         </div>
-        <div className="w-9/12  md:w-5/12 flex flex-row justify-end items-center">
-          <form class="hidden md:block min-w-[60%] mx-auto">
-            <label
-              for="default-search"
-              class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-            >
-              Search
-            </label>
-            <div class="relative">
-              <div class="hidden md:flex absolute inset-y-0 start-0 items-center ps-3 pointer-events-none">
-                <svg
-                  class="w-4 h-4 text-gray-500 dark:text-gray-400"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                  />
-                </svg>
-              </div>
-              <input
-                type="search"
-                id="default-search"
-                class="hidden md:block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-400 rounded-lg focus:border focus:outline-blue-300 bg-gray-50"
-                placeholder="Search questions..."
-                required
-              />
-            </div>
-          </form>
+        <div className="w-9/12  md:w-5/12 flex flex-row justify-between items-center">
+          
+
+          <div className="text-sm flex gap-2 justify-center items-center text-[#007acc]">
+            <a href="#" className="w-[80px] h-[34px] rounded flex justify-center items-center hover:bg-[#007acc99] hover:text-white">Contact</a>
+            <a href="#" className="w-[80px] h-[34px] rounded flex justify-center items-center hover:bg-[#007acc99] hover:text-white">About Us</a>
+          </div>
 
           <button
-            className="block md:hidden text-3xl mr-2"
+            className="md:hidden text-2xl mr-2 w-10 h-10 rounded-full flex justify-center items-center text-white bg-[#007acc]"
             onClick={() => {
               handleFilter();
             }}

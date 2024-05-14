@@ -53,6 +53,11 @@ function Filter() {
     if (!isAllChecked) {
       setIsAllChecked(true);
       setShowFilterMobileScreen(false);
+
+      setIsAllBasicChecked(false);
+      setIsAllIntermediateChecked(false);
+      setIsAllAdvancedChecked(false);
+
       getAllQuiz();
     } else {
       setIsAllChecked(false);
@@ -82,6 +87,11 @@ function Filter() {
     if (!isALlBasicChecked) {
       setIsAllBasicChecked(true);
       setShowFilterMobileScreen(false);
+
+      setIsAllChecked(false);
+      setIsAllIntermediateChecked(false);
+      setIsAllAdvancedChecked(false);
+
       getAllBasicQsn();
     } else {
       setIsAllBasicChecked(false);
@@ -113,6 +123,11 @@ function Filter() {
     if (!isAllIntermediateChecked) {
       setIsAllIntermediateChecked(true);
       setShowFilterMobileScreen(false);
+
+      setIsAllChecked(false);
+      setIsAllBasicChecked(false);
+      setIsAllAdvancedChecked(false);
+
       getAllIntermediateQsn();
     } else {
       setIsAllIntermediateChecked(false);
@@ -142,6 +157,11 @@ function Filter() {
     if (!isAllAdvancedChecked) {
       setIsAllAdvancedChecked(true);
       setShowFilterMobileScreen(false);
+
+      setIsAllChecked(false);
+      setIsAllBasicChecked(false);
+      setIsAllIntermediateChecked(false);
+
       getAllAdvancedQsn();
     } else {
       setIsAllAdvancedChecked(false);
