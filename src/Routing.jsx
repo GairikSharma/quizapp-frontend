@@ -4,6 +4,7 @@ import { GlobalContext } from "./GlobalContext";
 import Instruction from "./components/instruction/Instruction";
 import HomePage from "./components/HomePage/HomePage";
 import MockTest from "./pages/MockTest";
+import Tab from "./components/Tab/Tab";
 
 function Routing() {
   return (

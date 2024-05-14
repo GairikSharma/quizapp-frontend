@@ -149,8 +149,7 @@ function App() {
             setLevelChecked,
           }}
         >
-          <Tab />
-          <div className="App w-full relative flex">
+          <div className="App w-full relative ">
             <Routing />
           </div>
         </GlobalContext.Provider>
