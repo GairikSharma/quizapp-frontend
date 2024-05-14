@@ -6,6 +6,7 @@ import { IoClose } from "react-icons/io5";
 import { TbBrandSpeedtest } from "react-icons/tb";
 import { IoIosBulb } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { CiFilter } from "react-icons/ci";
 
 function Tab() {
   const navigate = useNavigate();
@@ -14,11 +15,23 @@ function Tab() {
   };
   const handle = useFullScreenHandle();
   const [isTest, setIsTest] = useState(false);
-  const { setShowSidebar, setShowMenu, setShowTestTopics, showTestTopics, testTopic, setTestTopic } =
-    useContext(GlobalContext);
+  const {
+    setShowSidebar,
+    setShowMenu,
+    setShowTestTopics,
+    showTestTopics,
+    testTopic,
+    setTestTopic,
+    showFilter,
+    setShowFilter,
+  } = useContext(GlobalContext);
 
   const handleSidebar = () => {
     setShowSidebar(true);
+  };
+
+  const handleFilter = () => {
+    setShowFilter(true)
   };
 
   const freeMock = () => {
@@ -70,12 +83,14 @@ function Tab() {
             </div>
           </form>
 
-          {/* <button
-            className="hidden relative md:flex justify-center items-center gap-2 test-btn min-w-[90px] h-[35px] bg-[#007acc] rounded-lg mx-4 text-sm text-white"
-            onClick={freeMock}
+          <button
+            className="block md:hidden text-3xl mr-2"
+            onClick={() => {
+              handleFilter();
+            }}
           >
-            Sign In
-          </button> */}
+            <CiFilter />
+          </button>
 
           <button
             className="relative flex justify-center items-center gap-2 test-btn min-w-[120px] h-[35px] bg-[#007acc] rounded-lg mx-4 text-sm text-white"
@@ -104,7 +119,7 @@ function Tab() {
                       onClick={() => {
                         startTest();
                         setShowTestTopics(false);
-                        setTestTopic("quantitative-aptitude")
+                        setTestTopic("quantitative-aptitude");
                       }}
                     >
                       Quants
@@ -116,7 +131,7 @@ function Tab() {
                       onClick={() => {
                         startTest();
                         setShowTestTopics(false);
-                        setTestTopic("verbal")
+                        setTestTopic("verbal");
                       }}
                     >
                       Verbal
@@ -128,7 +143,7 @@ function Tab() {
                       onClick={() => {
                         startTest();
                         setShowTestTopics(false);
-                        setTestTopic("oop")
+                        setTestTopic("oop");
                       }}
                     >
                       OOP
@@ -140,7 +155,7 @@ function Tab() {
                       onClick={() => {
                         startTest();
                         setShowTestTopics(false);
-                        setTestTopic("dbms")
+                        setTestTopic("dbms");
                       }}
                     >
                       DBMS
@@ -152,7 +167,7 @@ function Tab() {
                       onClick={() => {
                         startTest();
                         setShowTestTopics(false);
-                        setTestTopic("dsa")
+                        setTestTopic("dsa");
                       }}
                     >
                       DSA
@@ -164,7 +179,7 @@ function Tab() {
                       onClick={() => {
                         startTest();
                         setShowTestTopics(false);
-                        setTestTopic("computer-networks")
+                        setTestTopic("computer-networks");
                       }}
                     >
                       CN

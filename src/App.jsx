@@ -21,9 +21,27 @@ function App() {
   const [correctAnswer, setCorrectAnswer] = useState("");
 
   //state for getting specific questions from specific topics
-  const [topic, setTopic] = useState("quantitative-aptitude");
+  const [topic, setTopic] = useState("dsa");
 
   const [showSidebar, setShowSidebar] = useState(false);
+
+  const [showFilter, setShowFilter] = useState(false);
+
+  //States for filters
+  const [showAllQsn, setShowAllQsn] = useState(true);
+  const [showBasicQsn, setShowBasicQsn] = useState(false);
+  const [showIntermediateQsn, setShowIntermediateQsn] = useState(false);
+  const [showAdvancedQsn, setShowAdvanceQsn] = useState(false);
+
+  //State for storing all level questions
+  //State for controlling the checkbox
+  const [isAllChecked, setIsAllChecked] = useState(false);
+  const [isALlBasicChecked, setIsAllBasicChecked] = useState(false)
+  const [isAllIntermediateChecked, setIsAllIntermediateChecked] = useState(false)
+  const [isAllAdvancedChecked, setIsAllAdvancedChecked] = useState(false)
+
+  
+
   //state for loader
   const [loader, setLoader] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
@@ -36,6 +54,10 @@ function App() {
   //State for timer and calculating the score
   const [seconds, setSeconds] = useState(20 * 60);
   const [showScore, setShowScore] = useState(false);
+
+  
+
+  // console.log(topic);
 
   const getAllQuiz = async () => {
     try {
@@ -57,7 +79,7 @@ function App() {
     getAllQuiz();
   }, [topic]);
 
-  // console.log(allquiz.length);
+
 
   return (
     <>
@@ -97,6 +119,21 @@ function App() {
             setSeconds,
             showScore,
             setShowScore,
+            showFilter,
+            setShowFilter,
+            showBasicQsn,
+            setShowBasicQsn,
+            showAllQsn,
+            setShowAllQsn,
+
+            
+
+            isAllChecked, setIsAllChecked,
+            isALlBasicChecked, setIsAllBasicChecked,
+            isAllIntermediateChecked, setIsAllIntermediateChecked,
+            isAllAdvancedChecked, setIsAllAdvancedChecked,
+
+            topic, setTopic
           }}
         >
           <Tab />
