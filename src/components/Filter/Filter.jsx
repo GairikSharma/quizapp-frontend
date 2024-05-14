@@ -56,7 +56,6 @@ function Filter() {
       getAllQuiz();
     } else {
       setIsAllChecked(false);
-      setShowFilterMobileScreen(false);
       getAllQuiz();
     }
   };
@@ -87,7 +86,6 @@ function Filter() {
       getAllBasicQsn();
     } else {
       setIsAllBasicChecked(false);
-      setShowFilterMobileScreen(false);
       getAllQuiz();
     }
   };
@@ -120,7 +118,6 @@ function Filter() {
       getAllIntermediateQsn();
     } else {
       setIsAllIntermediateChecked(false);
-      setShowFilterMobileScreen(false);
       getAllQuiz();
     }
   };
@@ -151,7 +148,6 @@ function Filter() {
       getAllAdvancedQsn();
     } else {
       setIsAllAdvancedChecked(false);
-      setShowFilterMobileScreen(false);
       getAllQuiz();
     }
   };
