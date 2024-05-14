@@ -23,6 +23,10 @@ function Filter() {
 
     isAllAdvancedChecked,
     setIsAllAdvancedChecked,
+
+    //states for filter section in mobile screen
+    showFilterMobileScreen,
+    setShowFilterMobileScreen,
   } = useContext(GlobalContext);
   console.log(topic);
   const getAllQuiz = async () => {
@@ -48,9 +52,11 @@ function Filter() {
   const handleAllQuestions = () => {
     if (!isAllChecked) {
       setIsAllChecked(true);
+      setShowFilterMobileScreen(false);
       getAllQuiz();
     } else {
       setIsAllChecked(false);
+      setShowFilterMobileScreen(false);
       getAllQuiz();
     }
   };
@@ -77,11 +83,11 @@ function Filter() {
   const handleBasicQuestions = () => {
     if (!isALlBasicChecked) {
       setIsAllBasicChecked(true);
-      console.log("just checked");
+      setShowFilterMobileScreen(false);
       getAllBasicQsn();
     } else {
       setIsAllBasicChecked(false);
-      console.log("just unchecked");
+      setShowFilterMobileScreen(false);
       getAllQuiz();
     }
   };
@@ -110,9 +116,11 @@ function Filter() {
   const handleIntermediateQuestions = () => {
     if (!isAllIntermediateChecked) {
       setIsAllIntermediateChecked(true);
+      setShowFilterMobileScreen(false);
       getAllIntermediateQsn();
     } else {
       setIsAllIntermediateChecked(false);
+      setShowFilterMobileScreen(false);
       getAllQuiz();
     }
   };
@@ -139,35 +147,49 @@ function Filter() {
   const handleAdvanceQuestion = () => {
     if (!isAllAdvancedChecked) {
       setIsAllAdvancedChecked(true);
+      setShowFilterMobileScreen(false);
       getAllAdvancedQsn();
     } else {
       setIsAllAdvancedChecked(false);
+      setShowFilterMobileScreen(false);
       getAllQuiz();
     }
   };
 
+  const handleFilterMobileScreen = () => {
+    setShowFilterMobileScreen(true);
+  };
+
   return (
     <>
-      <div className="w-full h-full flex gap-3 flex-col">
+      <div
+        className={
+          showFilterMobileScreen
+            ? "md:hidden fixed top-16 right-4 rounded-lg z-50 bg-slate-100 text-auto shadow-lg border border-black text-sm w-[250px] h-auto p-4 flex gap-2 flex-col justify-center items-start"
+            : "w-full h-full hidden md:flex gap-3 flex-col"
+        }
+      >
         <div className="flex gap-2 justify-start items-center text-2xl font-semibold md:text-[#007acc]">
           <button
             className="absolute top-3 right-3 md:hidden"
             onClick={() => {
-              setShowFilter(false);
+              setShowFilterMobileScreen(false);
             }}
           >
             <IoMdClose />
           </button>
-          Filters{" "}
-          <div className="md:text-gray-500">
+          <div className="hidden md:block">Filters</div>
+          <div className="hidden md:block md:text-gray-500">
             <CiFilter />
           </div>
         </div>
+
         <div className="flex gap-2">
           <input
             type="checkbox"
             name="all"
             id="all"
+            checked={isAllChecked}
             onChange={handleAllQuestions}
           />
           <label htmlFor="all"> All </label>

@@ -24,6 +24,8 @@ function Tab() {
     setTestTopic,
     showFilter,
     setShowFilter,
+
+    showFilterMobileScreen, setShowFilterMobileScreen
   } = useContext(GlobalContext);
 
   const handleSidebar = () => {
@@ -31,7 +33,7 @@ function Tab() {
   };
 
   const handleFilter = () => {
-    setShowFilter(true)
+    setShowFilterMobileScreen(true)
   };
 
   const freeMock = () => {

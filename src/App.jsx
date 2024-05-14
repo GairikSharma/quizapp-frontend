@@ -36,11 +36,10 @@ function App() {
   //State for storing all level questions
   //State for controlling the checkbox
   const [isAllChecked, setIsAllChecked] = useState(false);
-  const [isALlBasicChecked, setIsAllBasicChecked] = useState(false)
-  const [isAllIntermediateChecked, setIsAllIntermediateChecked] = useState(false)
-  const [isAllAdvancedChecked, setIsAllAdvancedChecked] = useState(false)
-
-  
+  const [isALlBasicChecked, setIsAllBasicChecked] = useState(false);
+  const [isAllIntermediateChecked, setIsAllIntermediateChecked] =
+    useState(false);
+  const [isAllAdvancedChecked, setIsAllAdvancedChecked] = useState(false);
 
   //state for loader
   const [loader, setLoader] = useState(false);
@@ -54,8 +53,6 @@ function App() {
   //State for timer and calculating the score
   const [seconds, setSeconds] = useState(20 * 60);
   const [showScore, setShowScore] = useState(false);
-
-  
 
   // console.log(topic);
 
@@ -79,7 +76,7 @@ function App() {
     getAllQuiz();
   }, [topic]);
 
-
+  const [showFilterMobileScreen, setShowFilterMobileScreen] = useState(false);
 
   return (
     <>
@@ -126,14 +123,20 @@ function App() {
             showAllQsn,
             setShowAllQsn,
 
-            
+            isAllChecked,
+            setIsAllChecked,
+            isALlBasicChecked,
+            setIsAllBasicChecked,
+            isAllIntermediateChecked,
+            setIsAllIntermediateChecked,
+            isAllAdvancedChecked,
+            setIsAllAdvancedChecked,
 
-            isAllChecked, setIsAllChecked,
-            isALlBasicChecked, setIsAllBasicChecked,
-            isAllIntermediateChecked, setIsAllIntermediateChecked,
-            isAllAdvancedChecked, setIsAllAdvancedChecked,
+            topic,
+            setTopic,
 
-            topic, setTopic
+            showFilterMobileScreen,
+            setShowFilterMobileScreen,
           }}
         >
           <Tab />
