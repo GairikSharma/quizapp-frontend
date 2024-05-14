@@ -50,10 +50,10 @@ function Tab() {
             <IoIosBulb />
           </span>
         </div>
-        <div className="w-9/12  md:w-5/12 flex flex-row justify-between items-center">
+        <div className="w-9/12  md:w-5/12 flex flex-row justify-end items-center">
           
 
-          <div className="text-sm flex gap-2 justify-center items-center text-[#007acc]">
+          <div className="hidden text-sm md:flex gap-2 justify-center items-center text-[#007acc]">
             <a href="#" className="w-[80px] h-[34px] rounded flex justify-center items-center hover:bg-[#007acc99] hover:text-white">Contact</a>
             <a href="#" className="w-[80px] h-[34px] rounded flex justify-center items-center hover:bg-[#007acc99] hover:text-white">About Us</a>
           </div>

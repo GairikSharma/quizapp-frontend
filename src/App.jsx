@@ -54,6 +54,13 @@ function App() {
   const [seconds, setSeconds] = useState(20 * 60);
   const [showScore, setShowScore] = useState(false);
 
+  const [levelChecked, setLevelChecked] = useState({
+    all: true,
+    basic: false,
+    intermediate: false,
+    advanced: false,
+  });
+
   // console.log(topic);
 
   const getAllQuiz = async () => {
@@ -137,6 +144,9 @@ function App() {
 
             showFilterMobileScreen,
             setShowFilterMobileScreen,
+
+            levelChecked,
+            setLevelChecked,
           }}
         >
           <Tab />

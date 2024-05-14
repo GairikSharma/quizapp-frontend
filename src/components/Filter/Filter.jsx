@@ -27,6 +27,9 @@ function Filter() {
     //states for filter section in mobile screen
     showFilterMobileScreen,
     setShowFilterMobileScreen,
+
+    levelChecked,
+    setLevelChecked,
   } = useContext(GlobalContext);
   console.log(topic);
   const getAllQuiz = async () => {
@@ -52,11 +55,11 @@ function Filter() {
   const handleAllQuestions = () => {
     if (!isAllChecked) {
       setIsAllChecked(true);
-      setShowFilterMobileScreen(false);
+      // setShowFilterMobileScreen(false);
 
-      setIsAllBasicChecked(false);
-      setIsAllIntermediateChecked(false);
-      setIsAllAdvancedChecked(false);
+      // setIsAllBasicChecked(false);
+      // setIsAllIntermediateChecked(false);
+      // setIsAllAdvancedChecked(false);
 
       getAllQuiz();
     } else {
@@ -73,6 +76,11 @@ function Filter() {
       const res = await data.json();
       if (res) {
         const basicQuestions = res.all_qs.filter((q) => q.level === "Basic");
+        //Checking other checkboxes
+        if (levelChecked.intermediate == true) {
+          const intermediate = res.all_qs.filter((e) => {e.level === "Intermediate"})
+          setAllQuiz([...intermediate, ...basicQuestions])
+        }
         setAllQuiz(basicQuestions);
       }
     } catch (error) {
@@ -86,11 +94,11 @@ function Filter() {
   const handleBasicQuestions = () => {
     if (!isALlBasicChecked) {
       setIsAllBasicChecked(true);
-      setShowFilterMobileScreen(false);
+      // setShowFilterMobileScreen(false);
 
-      setIsAllChecked(false);
-      setIsAllIntermediateChecked(false);
-      setIsAllAdvancedChecked(false);
+      // setIsAllChecked(false);
+      // setIsAllIntermediateChecked(false);
+      // setIsAllAdvancedChecked(false);
 
       getAllBasicQsn();
     } else {
@@ -122,11 +130,11 @@ function Filter() {
   const handleIntermediateQuestions = () => {
     if (!isAllIntermediateChecked) {
       setIsAllIntermediateChecked(true);
-      setShowFilterMobileScreen(false);
+      // setShowFilterMobileScreen(false);
 
-      setIsAllChecked(false);
-      setIsAllBasicChecked(false);
-      setIsAllAdvancedChecked(false);
+      // setIsAllChecked(false);
+      // setIsAllBasicChecked(false);
+      // setIsAllAdvancedChecked(false);
 
       getAllIntermediateQsn();
     } else {
@@ -156,11 +164,11 @@ function Filter() {
   const handleAdvanceQuestion = () => {
     if (!isAllAdvancedChecked) {
       setIsAllAdvancedChecked(true);
-      setShowFilterMobileScreen(false);
+      // setShowFilterMobileScreen(false);
 
-      setIsAllChecked(false);
-      setIsAllBasicChecked(false);
-      setIsAllIntermediateChecked(false);
+      // setIsAllChecked(false);
+      // setIsAllBasicChecked(false);
+      // setIsAllIntermediateChecked(false);
 
       getAllAdvancedQsn();
     } else {
