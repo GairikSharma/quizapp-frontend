@@ -56,7 +56,6 @@ function Filter() {
       getAllQuiz();
     } else {
       setIsAllChecked(false);
-      getAllQuiz();
     }
   };
 
@@ -86,7 +85,6 @@ function Filter() {
       getAllBasicQsn();
     } else {
       setIsAllBasicChecked(false);
-      getAllQuiz();
     }
   };
 
@@ -118,7 +116,6 @@ function Filter() {
       getAllIntermediateQsn();
     } else {
       setIsAllIntermediateChecked(false);
-      getAllQuiz();
     }
   };
 
@@ -148,7 +145,6 @@ function Filter() {
       getAllAdvancedQsn();
     } else {
       setIsAllAdvancedChecked(false);
-      getAllQuiz();
     }
   };
 
