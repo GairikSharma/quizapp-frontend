@@ -43,7 +43,7 @@ function Tab() {
 
   return (
     <>
-      <div className="sticky md:static top-0 bg-white tab-wrapper w-full h-[64px] flex flex-row justify-between gap-6 items-center border border-x-0 border-y-2 z-10 border-gray-300 shadow-xl">
+      <div className="sticky top-0 bg-white tab-wrapper w-full h-[64px] flex flex-row justify-between gap-6 items-center border border-x-0 border-y-2 z-10 border-gray-300 shadow-xl">
         <div className="text-lg md:text-3xl ml-4 text-[#007acc] font-semibold flex justify-start items-center">
           InsightIQ{" "}
           <span className="text-[#fec107]">
