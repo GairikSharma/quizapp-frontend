@@ -61,6 +61,9 @@ function MockTest() {
           Math.min(shuffledQuestions.length, 20)
         );
         setQuestions(selectedQuestions);
+        if (Window.location.reload()) {
+          navigate("/")
+        }
       }
     } catch (error) {
       console.log(error);
@@ -105,7 +108,7 @@ function MockTest() {
 
   const navigate = useNavigate();
   const goBackToHomeScreen = () => {
-    navigate("/");
+    navigate("/home");
     window.location.reload();
   };
 
@@ -292,12 +295,7 @@ function MockTest() {
                   Retake Test
                 </button>
 
-                {/* <button
-                  className="w-[120px] h-[34px] bg-[#007acc] rounded-lg mt-2 text-white flex gap-2 justify-center items-center"
-                  onClick={goBackToHomeScreen}
-                >
-                  Share on <RxLinkedinLogo />
-                </button> */}
+                
               </div>
             </div>
           )}

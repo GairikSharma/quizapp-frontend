@@ -139,8 +139,8 @@ function App() {
             isAllAdvancedChecked,
             setIsAllAdvancedChecked,
 
-            topic,
-            setTopic,
+            // topic,
+            // setTopic,
 
             showFilterMobileScreen,
             setShowFilterMobileScreen,

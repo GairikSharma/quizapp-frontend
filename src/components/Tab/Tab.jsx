@@ -59,7 +59,7 @@ function Tab() {
           </div>
 
           <button
-            className="md:hidden text-2xl mr-2 w-10 h-10 rounded-full flex justify-center items-center text-white bg-[#007acc]"
+            className="hidden text-2xl mr-2 w-10 h-10 rounded-full"
             onClick={() => {
               handleFilter();
             }}

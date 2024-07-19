@@ -1,20 +1,22 @@
-import React, { useContext } from "react";
-import { BrowserRouter, Router, Route, Routes } from "react-router-dom";
-import { GlobalContext } from "./GlobalContext";
+import { Route, Routes } from "react-router-dom";
 import Instruction from "./components/instruction/Instruction";
 import HomePage from "./components/HomePage/HomePage";
 import MockTest from "./pages/MockTest";
-import Tab from "./components/Tab/Tab";
+import LandingPage from "./pages/LandingPage";
+import { useContext } from "react";
+import { GlobalContext } from "./GlobalContext";
 
 function Routing() {
+  const { topic } = useContext(GlobalContext);
+
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="/instructions" element={<Instruction />}></Route>
-        <Route path="/mock-test/test_topic" element={<MockTest />}></Route>
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/home/:topic" element={<HomePage />} />
+      <Route path="/instructions" element={<Instruction />} />
+      <Route path="/mock-test/:topic" element={<MockTest />} />
+    </Routes>
   );
 }
 

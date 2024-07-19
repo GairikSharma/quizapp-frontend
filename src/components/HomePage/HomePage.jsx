@@ -43,7 +43,7 @@ function HomePage() {
       <div className="flex flex-col">
         <Tab />
 
-        <div className="flex justify-between">
+        <div className="flex">
           {showSidebar && <MobileSidebar />}
           <div className="p-4 h-screen hidden md:block md:w-3/12 border border-y-2 border-t-0 border-b-0 sticky top-0 bottom-0 bg-[#007acc]">
             <Sidebar />
@@ -132,11 +132,11 @@ function HomePage() {
             </div>
           )}
 
-          {!showFilterMobileScreen && (
+          {/* {!showFilterMobileScreen && (
             <div className="sticky top-0 right-0 bottom-0 p-4 h-screen hidden md:block md:w-3/12 border border-y-2 border-t-0 border-b-0 bg-[#007acc] md:bg-white">
               <Filter />
             </div>
-          )}
+          )} */}
         </div>
       </div>
 
