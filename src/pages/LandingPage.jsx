@@ -9,6 +9,11 @@ function LandingPage() {
   const navigate = useNavigate();
   const targetRef = useRef(null);
 
+  const contactRef = useRef(null);
+  const handleContactRef = () => {
+    contactRef.current.scrollIntoView({behavior: "smooth"})
+  }
+
   const goToQuizzes = (topic) => {
     setTopic(topic);
     navigate(`/home/${topic ? topic : ""}`);
@@ -84,7 +89,7 @@ function LandingPage() {
 
       <div
         ref={targetRef}
-        className="text-center text-lg md:text-2xl lg:text-4xl my-[30px]"
+        className="text-center text-2xl lg:text-4xl my-[30px] font-extrabold"
       >
         Start Learning
       </div>
@@ -113,7 +118,7 @@ function LandingPage() {
         <span className="text-center">InsightIQ</span>
         <div className="contact text-center">+003-2520-4488</div>
         <div className="icons h-full flex justify-center items-center">
-          <div className="w-[40px] text-white flex gap-5 justify-center items-center">
+          <div className="w-[40%] text-4xl text-white flex gap-5 justify-center items-center">
             <CiFacebook />
             <FaGoogle />
             <FaInstagram />

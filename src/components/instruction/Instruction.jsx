@@ -109,7 +109,7 @@ function Instruction() {
                   id="self_declaration"
                   onChange={handleCheck}
                 />
-                <label htmlFor="self-declaration">
+                <label htmlFor="self_declaration">
                   I hereby declare that I will complete this test honestly and
                   without any external assistance.
                 </label>

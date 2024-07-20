@@ -54,8 +54,8 @@ function Tab() {
           
 
           <div className="hidden text-sm md:flex gap-2 justify-center items-center text-[#007acc]">
-            <a href="#" className="w-[80px] h-[34px] rounded flex justify-center items-center hover:bg-[#007acc99] hover:text-white">Contact</a>
-            <a href="#" className="w-[80px] h-[34px] rounded flex justify-center items-center hover:bg-[#007acc99] hover:text-white">About Us</a>
+            <a className="w-[80px] h-[34px] rounded flex justify-center items-center cursor-pointer">Contact</a>
+            <a className="w-[80px] h-[34px] rounded flex justify-center items-center cursor-pointer">About Us</a>
           </div>
 
           <button
