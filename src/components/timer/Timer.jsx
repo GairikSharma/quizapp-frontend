@@ -25,7 +25,7 @@ function Timer() {
 
   return (
     <div>
-      <div className="h-[44px] w-[150px] bg-white border-2 border-gray-300 m-auto rounded-lg shadow-xl flex flex-col justify-center items-center">
+      <div className="w-auto h-[44px] flex flex-col justify-center items-center">
         <h2>{formatTime(seconds)}</h2>
       </div>
     </div>
