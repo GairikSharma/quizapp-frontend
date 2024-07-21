@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../GlobalContext";
 
 function Instruction() {
-  const { testTopic, setTestTopic } = useContext(GlobalContext);
+  const { topic, testTopic, setTestTopic } = useContext(GlobalContext);
   const [Ischecked, setIsChecked] = useState(false);
 
   const handleCheck = () => {
@@ -17,7 +17,7 @@ function Instruction() {
   };
 
   const goToMockTest = () => {
-    navigate("/mock-test/test_topic");
+    navigate("/mock-test/test")
   };
 
   return (
