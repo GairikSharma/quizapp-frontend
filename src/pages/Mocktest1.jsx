@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import Timer from "../components/timer/Timer";
-import { IoCloudDone } from "react-icons/io5";
+import { IoCloseOutline, IoCloudDone } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../GlobalContext";
 import { motion } from "framer-motion";
@@ -8,18 +8,10 @@ import { IoIosBulb } from "react-icons/io";
 import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/default-highlight";
 import Confetti from "react-confetti";
 import useWindowSize from "react-use/lib/useWindowSize";
-import { RxLinkedinLogo } from "react-icons/rx";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 function MockTest1() {
-  const {
-    seconds,
-    setSeconds,
-    showScore,
-    setShowScore,
-    testTopic,
-    loader,
-    setLoader,
-  } = useContext(GlobalContext);
+  const { seconds, setSeconds, testTopic } = useContext(GlobalContext);
   const { width, height } = useWindowSize();
   const [questions, setQuestions] = useState([]);
   const [topic, setTopic] = useState("oop");
@@ -30,6 +22,8 @@ function MockTest1() {
   const [waitingForScore, setWaitingForScore] = useState(true);
   const [score, setScore] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState({});
+
+  const [questionList, setQuestionList] = useState(false);
   const navigate = useNavigate();
 
   const fetchQuestions = async () => {
@@ -74,7 +68,7 @@ function MockTest1() {
     let newScore = 0;
     questions.forEach((question) => {
       if (selectedOptions[question._id] === question.correctOption) {
-        newScore += 1;
+        newScore += 2;
       }
     });
     setScore(newScore);
@@ -90,12 +84,9 @@ function MockTest1() {
     }, 3000);
   };
 
-  const handleShowScorePopUp = () => {
-    setShowScorePopUp(true);
-  };
-
   const goBackToHomeScreen = () => {
     navigate("/home");
+    window.location.reload();
   };
 
   const goToNextQuestion = () => {
@@ -105,9 +96,7 @@ function MockTest1() {
   };
 
   const goToPreviousQuestion = () => {
-    setCurrentQuestionIndex((prevIndex) =>
-      Math.max(prevIndex - 1, 0)
-    );
+    setCurrentQuestionIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
 
   const goToQuestion = (index) => {
@@ -119,8 +108,8 @@ function MockTest1() {
       {testloader ? (
         <div className="fixed bg-white w-full h-screen top-0 bottom-0 right-0 left-0 flex flex-row justify-center items-center z-50">
           <motion.div
-            animate={{ scale: [1, 1.5, 1] }} 
-            transition={{ duration: 1, repeat: Infinity }} 
+            animate={{ scale: [1, 1.5, 1] }}
+            transition={{ duration: 1, repeat: Infinity }}
           >
             <IoIosBulb className="text-yellow-500 text-6xl" />
           </motion.div>
@@ -137,11 +126,48 @@ function MockTest1() {
                 <Timer />
               </div>
             </div>
+            <button
+              className="block md:hidden lg:hidden"
+              onClick={() => {
+                setQuestionList(true);
+              }}
+            >
+              <GiHamburgerMenu />
+            </button>
           </div>
 
-          <div className="relative flex h-screen overflow-y-scroll">
-            
+          {questionList ? (
+            <div className="block fixed top-0 bottom-0 right-0 bg-slate-100 z-10 h-screen md:hidden lg:hidden w-3/4 border-r-2 border-gray-200 p-4">
+              <button className="text-xl font-semibold" onClick={()=>{setQuestionList(false)}}><IoCloseOutline /></button>
+              <h3 className="font-semibold mb-4">Questions</h3>
+              <ul className="flex flex-row flex-wrap gap-2">
+                {questions.map((question, index) => (
+                  <span key={question._id}>
+                    <button
+                      className={`p-2 rounded-lg text-center w-[34px] h-[34px] ${
+                        index === currentQuestionIndex
+                          ? "bg-blue-500 text-white"
+                          : "bg-gray-100"
+                      }`}
+                      onClick={() => goToQuestion(index)}
+                    >
+                      {index + 1}
+                    </button>
+                  </span>
+                ))}
+              </ul>
+              <button
+                className="bottom-2 mt-4 w-full p-2 bg-blue-600 text-white rounded-lg"
+                onClick={handleSubmission}
+              >
+                Submit
+              </button>
+            </div>
+          ) : (
+            ""
+          )}
 
+          <div className="relative flex h-screen overflow-y-scroll">
             {questions.length > 0 && (
               <div className="p-5 w-full md:w-[74%] h-auto">
                 <span className="font-semibold text-xl">
@@ -160,26 +186,33 @@ function MockTest1() {
                   ) : null}
                 </p>
                 <ul className="w-full p-5 mr-4 mt-4 flex flex-col gap-5">
-                  {questions[currentQuestionIndex].options.map((option, oIndex) => (
-                    <li
-                      key={oIndex}
-                      className="w-full text-md flex gap-4 justify-start items-center"
-                    >
-                      <input
-                        type="radio"
-                        id={`option-${oIndex}`}
-                        name={`question-${questions[currentQuestionIndex]._id}`}
-                        value={option}
-                        checked={
-                          selectedOptions[questions[currentQuestionIndex]._id] === option
-                        }
-                        onChange={() =>
-                          handleOptionChange(questions[currentQuestionIndex]._id, option)
-                        }
-                      />
-                      <label htmlFor={`option-${oIndex}`}>{option}</label>
-                    </li>
-                  ))}
+                  {questions[currentQuestionIndex].options.map(
+                    (option, oIndex) => (
+                      <li
+                        key={oIndex}
+                        className="w-full text-md flex gap-4 justify-start items-center"
+                      >
+                        <input
+                          type="radio"
+                          id={`option-${oIndex}`}
+                          name={`question-${questions[currentQuestionIndex]._id}`}
+                          value={option}
+                          checked={
+                            selectedOptions[
+                              questions[currentQuestionIndex]._id
+                            ] === option
+                          }
+                          onChange={() =>
+                            handleOptionChange(
+                              questions[currentQuestionIndex]._id,
+                              option
+                            )
+                          }
+                        />
+                        <label htmlFor={`option-${oIndex}`}>{option}</label>
+                      </li>
+                    )
+                  )}
                 </ul>
                 <div className="h-[100px]"></div>
               </div>
@@ -216,7 +249,7 @@ function MockTest1() {
             </div>
 
             {/* Sidebar for question navigation */}
-            <div className="lg:w-1/4 border-r-2 border-gray-200 p-4">
+            <div className="hidden md:block lg:block md:w-1/4 lg:w-1/4 border-r-2 border-gray-200 p-4">
               <h3 className="font-semibold mb-4">Questions</h3>
               <ul className="flex flex-row flex-wrap gap-2">
                 {questions.map((question, index) => (
@@ -229,7 +262,7 @@ function MockTest1() {
                       }`}
                       onClick={() => goToQuestion(index)}
                     >
-                    {index + 1}
+                      {index + 1}
                     </button>
                   </span>
                 ))}
@@ -242,11 +275,7 @@ function MockTest1() {
               </button>
             </div>
           </div>
-
-          
         </div>
-
-        
       )}
 
       {submitClicked ? (
@@ -299,8 +328,6 @@ function MockTest1() {
           )}
         </div>
       ) : null}
-
-      
     </>
   );
 }

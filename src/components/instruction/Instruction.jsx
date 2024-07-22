@@ -121,7 +121,7 @@ function Instruction() {
             <div
               className={
                 Ischecked
-                  ? "w-[120px] h-[34px] bg-[#007acc] text-white rounded-lg flex justify-center items-center"
+                  ? "cursor-pointer w-[120px] h-[34px] bg-[#007acc] text-white rounded-lg flex justify-center items-center"
                   : "w-[120px] h-[34px] bg-[#007acc] opacity-40 text-white rounded-lg flex justify-center items-center"
               }
             >

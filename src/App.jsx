@@ -21,7 +21,7 @@ function App() {
   const [correctAnswer, setCorrectAnswer] = useState("");
 
   //state for getting specific questions from specific topics
-  const [topic, setTopic] = useState("dsa");
+  const [topic, setTopic] = useState("quantitative-aptitude");
 
   const [showSidebar, setShowSidebar] = useState(false);
 
