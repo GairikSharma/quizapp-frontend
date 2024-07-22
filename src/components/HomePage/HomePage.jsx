@@ -45,7 +45,7 @@ function HomePage() {
 
         <div className="flex">
           {showSidebar && <MobileSidebar />}
-          <div className="p-4 h-screen hidden md:block md:w-3/12 border border-y-2 border-t-0 border-b-0 sticky top-0 bottom-0 bg-[#007acc]">
+          <div className="p-4 h-screen overflow-y-hidden hidden md:block md:w-3/12 border border-y-2 border-t-0 border-b-0 sticky top-0 bottom-0 bg-[#007acc]">
             <Sidebar />
           </div>
 

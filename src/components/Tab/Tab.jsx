@@ -44,7 +44,7 @@ function Tab() {
   return (
     <>
       <div className="sticky top-0 bg-white tab-wrapper w-full h-[64px] flex flex-row justify-between gap-6 items-center border border-x-0 border-y-2 z-10 border-gray-300 shadow-xl">
-        <div className="text-lg md:text-3xl ml-4 text-[#007acc] font-semibold flex justify-start items-center">
+        <div onClick={()=>{navigate("/")}} className="cursor-pointer text-lg md:text-3xl ml-4 text-[#007acc] font-semibold flex justify-start items-center">
           InsightIQ{" "}
           <span className="text-[#fec107]">
             <IoIosBulb />
@@ -53,10 +53,10 @@ function Tab() {
         <div className="w-9/12  md:w-5/12 flex flex-row justify-end items-center">
           
 
-          <div className="hidden text-sm md:flex gap-2 justify-center items-center text-[#007acc]">
+          {/* <div className="hidden text-sm md:flex gap-2 justify-center items-center text-[#007acc]">
             <a className="w-[80px] h-[34px] rounded flex justify-center items-center cursor-pointer">Contact</a>
             <a className="w-[80px] h-[34px] rounded flex justify-center items-center cursor-pointer">About Us</a>
-          </div>
+          </div> */}
 
           <button
             className="hidden text-2xl mr-2 w-10 h-10 rounded-full"

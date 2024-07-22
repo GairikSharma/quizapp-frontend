@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useEffect } from "react";
 import { CiFacebook } from "react-icons/ci";
 import { FaGoogle, FaInstagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +19,13 @@ function LandingPage() {
     navigate(`/home/${topic ? topic : ""}`);
   };
 
+  //disable scrolling on mount
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+  }, [])
+
   const handleScroll = () => {
+    document.body.style.overflow = 'auto';
     targetRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
