@@ -22,7 +22,7 @@ function Instruction() {
 
   return (
     
-      <div className="p-5 h-[120vh]">
+      <div className="p-5 min-h-screen overflow-y-auto">
         <div className="space-y-2">
           <h1 className="text-[#007acc] text-3xl font-bold tracking-tight sm:text-4xl">
             Instructions
