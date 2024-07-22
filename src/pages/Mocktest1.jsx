@@ -96,7 +96,6 @@ function MockTest1() {
 
   const goBackToHomeScreen = () => {
     navigate("/home");
-    window.location.reload();
   };
 
   const goToNextQuestion = () => {
@@ -217,7 +216,7 @@ function MockTest1() {
             </div>
 
             {/* Sidebar for question navigation */}
-            <div className="hidden lg:w-1/4 border-r-2 border-gray-200 p-4">
+            <div className="lg:w-1/4 border-r-2 border-gray-200 p-4">
               <h3 className="font-semibold mb-4">Questions</h3>
               <ul className="flex flex-row flex-wrap gap-2">
                 {questions.map((question, index) => (
