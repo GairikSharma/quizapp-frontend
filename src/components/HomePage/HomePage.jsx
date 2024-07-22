@@ -54,11 +54,13 @@ function HomePage() {
           {showAllQsn && (
             <div className="w-full md:w-8/12 relative flex flex-col gap-2 h-full">
               <div className="h-[20px]"></div>
-              {allquiz.map((i) => {
+              {allquiz.map((i, index) => {
                 return (
                   <div className="single-qs w-11/12" key={i._id}>
                     <div>
+                      
                       <p className="text-lg font-normal text-black z-* pl-5">
+                        <span className="pr-2">{index+1})</span>
                         {i.question}
                         {i.level != "Intermediate" && i.level != "Advanced" && (
                           <span class="ml-2 inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
