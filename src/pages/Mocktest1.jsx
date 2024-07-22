@@ -36,7 +36,7 @@ function MockTest1() {
         const shuffledQuestions = res.all_qs.sort(() => Math.random() - 0.5);
         const selectedQuestions = shuffledQuestions.slice(
           0,
-          Math.min(shuffledQuestions.length, 20)
+          Math.min(shuffledQuestions.length, 10)
         );
         setQuestions(selectedQuestions);
       }
