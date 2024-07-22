@@ -3,30 +3,37 @@ import { CiFacebook } from "react-icons/ci";
 import { FaGoogle, FaInstagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../GlobalContext";
+import { FaArrowRightLong } from "react-icons/fa6";
+import {
+  FaBrain,
+  FaCommentDots,
+  FaNetworkWired,
+  FaCodeBranch,
+  FaCubes,
+  FaDatabase,
+} from "react-icons/fa";
 
 function LandingPage() {
-  const { topic, setTopic } = useContext(GlobalContext);
+  const { setTopic } = useContext(GlobalContext);
   const navigate = useNavigate();
   const targetRef = useRef(null);
 
-  const contactRef = useRef(null);
-  const handleContactRef = () => {
-    contactRef.current.scrollIntoView({behavior: "smooth"})
-  }
+  // Disable scrolling on mount
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
+  const handleScroll = () => {
+    document.body.style.overflow = "auto";
+    targetRef.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   const goToQuizzes = (topic) => {
     setTopic(topic);
     navigate(`/home/${topic ? topic : ""}`);
-  };
-
-  //disable scrolling on mount
-  useEffect(() => {
-    document.body.style.overflow = 'hidden'
-  }, [])
-
-  const handleScroll = () => {
-    document.body.style.overflow = 'auto';
-    targetRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
   const routingData = [
@@ -35,36 +42,48 @@ function LandingPage() {
       name: "DSA",
       navigateTo: "dsa",
       bg: "#d0d0d0", // Darker Light Gray
+      description: "Master the foundations of efficient coding!",
+      icon: FaCodeBranch,
     },
     {
       id: 2,
       name: "OOP",
       navigateTo: "oop",
       bg: "#cce0f0", // Darker Pale Blue
+      description: "Understand the core principles of structured coding!",
+      icon: FaCubes,
     },
     {
       id: 3,
       name: "Computer Network",
       navigateTo: "computer-networks",
       bg: "#e6d8b9", // Darker Soft Beige
+      description: "Dive into the world of interconnected systems!",
+      icon: FaNetworkWired,
     },
     {
       id: 4,
       name: "DBMS",
       navigateTo: "dbms",
       bg: "#b2d0cb", // Darker Mint Green
+      description: "Unlock the secrets of data organization and retrieval!",
+      icon: FaDatabase,
     },
     {
       id: 5,
       name: "Aptitude",
       navigateTo: "quantitative-aptitude",
       bg: "#e0c1e0", // Darker Lavender
+      description: "Sharpen your mind with challenging puzzles!",
+      icon: FaBrain,
     },
     {
       id: 6,
       name: "Verbal",
       navigateTo: "verbal",
       bg: "#ffd2d2", // Darker Peach
+      description: "Enhance your language and comprehension skills!",
+      icon: FaCommentDots,
     },
   ];
 
@@ -101,22 +120,23 @@ function LandingPage() {
       </div>
       <div className="w-full flex justify-center my-[30px]">
         <div className="bg-blue-950 py-5 rounded-xl topics w-full md:w-[85%] lg:w-[80%] px-10 h-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center items-center my-2 md:my-4 lg:my-10">
-          {routingData.map((topic) => {
-            return (
-              <div
-                style={{ backgroundColor: topic.bg }}
-                className="bg-white w-full h-[180px] transition-transform transform lg:hover:translate-y-[-5px] border border-gray-300 shadow-lg rounded-lg flex gap-5 flex-col justify-center items-center"
+          {routingData.map((topic) => (
+            <div
+              key={topic.id}
+              style={{ backgroundColor: topic.bg }}
+              className="bg-white w-full h-[200px] transition-transform transform lg:hover:translate-y-[-5px] border border-gray-300 shadow-lg rounded-lg flex gap-1 flex-col justify-center items-center"
+            >
+              <div className="text-center text-3xl">{<topic.icon />}</div>
+              <span className="text-md font-semibold">{topic.name}</span>
+              <p className="text-center px-3 text-sm">{topic.description}</p>
+              <button
+                className="w-[100px] h-auto text-center flex gap-2 items-center ml-4 underline"
+                onClick={() => goToQuizzes(topic.navigateTo)}
               >
-                <span>{topic.name}</span>
-                <button
-                  className="w-[100px] h-[44px] rounded-md border border-blue-700 text-center"
-                  onClick={() => goToQuizzes(topic.navigateTo)}
-                >
-                  Explore
-                </button>
-              </div>
-            );
-          })}
+                Explore <FaArrowRightLong />
+              </button>
+            </div>
+          ))}
         </div>
       </div>
 
