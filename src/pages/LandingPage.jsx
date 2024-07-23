@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useEffect } from "react";
+import React, { useRef, useContext, useEffect, useState } from "react";
 import { CiFacebook } from "react-icons/ci";
 import { FaGoogle, FaInstagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -15,19 +15,21 @@ import {
 
 function LandingPage() {
   const { setTopic } = useContext(GlobalContext);
+  const [scrollEnable, setScrollEnable] = useState("hidden")
   const navigate = useNavigate();
   const targetRef = useRef(null);
 
   // Disable scrolling on mount
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
+  // useEffect(() => {
+  //   document.body.style.overflow = scrollEnable;
+  //   return () => {
+  //     document.body.style.overflow = "scroll";
+  //   };
+  // }, [scrollEnable]);
 
   const handleScroll = () => {
-    document.body.style.overflow = "auto";
+    
+    
     targetRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
